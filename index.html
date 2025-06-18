@@ -10,6 +10,7 @@
 
 <!-- FAVICON -->
 <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,12 +38,9 @@
   font-size:0.95rem;
   color:#ccc;
 }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #111;
-      color: #fff;
-    }
+    body, p, span, li {
+    font-family: 'Poppins', sans-serif;
+}
 
     .hero {
       background: linear-gradient(to right, #000, #024c3b);
@@ -121,9 +119,10 @@
     }
 
     @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
+      .hero h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; /* Bold */
+}
       .hero p {
         font-size: 1rem;
       }
