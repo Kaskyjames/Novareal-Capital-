@@ -126,6 +126,19 @@
       nav a:hover {
   color: #ffd700;
       }
+      .testimonial {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  position: absolute;
+  width: 100%;
+}
+
+.testimonial.active {
+  display: block;
+  opacity: 1;
+  position: relative;
+}
     }
   </style>
 </head>
@@ -287,6 +300,30 @@
   </div>
 </section>
 
+  <!-- CLIENT TESTIMONIALS SLIDER -->
+<section id="testimonials" style="background:#121212; padding:60px 20px; color:#fff; text-align:center;">
+  <h2 style="font-size:2rem; color:#ffd700; margin-bottom:40px;">
+    What Our Clients Say
+  </h2>
+
+  <div id="testimonial-slider" style="max-width:600px; margin:0 auto; position:relative;">
+    <div class="testimonial active">
+      <p>"Novareal made investing from Canada super easy. I got updates every step of the way!"</p>
+      <p style="color:#00ffcc; font-size:0.9rem;">— Ada O., Diaspora Investor</p>
+    </div>
+
+    <div class="testimonial">
+      <p>"Their team helped me buy my first rental unit. I now have a second income stream!"</p>
+      <p style="color:#00ffcc; font-size:0.9rem;">— Tunde A., First-Time Buyer</p>
+    </div>
+
+    <div class="testimonial">
+      <p>"We partnered with Novareal on a land banking project in Abuja. Professional from start to finish."</p>
+      <p style="color:#00ffcc; font-size:0.9rem;">— Prestige Estates Ltd., Institutional Client</p>
+    </div>
+  </div>
+</section>
+  
   <!-- Floating WhatsApp Chat Button -->
 <a href="https://wa.me/+40733760917" target="_blank" 
    style="position:fixed; bottom:20px; right:20px; z-index:1000; 
@@ -312,5 +349,22 @@
 
   cards.forEach(card => observer.observe(card));
 </script>
+
+  <script>
+  let index = 0;
+  const testimonials = document.querySelectorAll('.testimonial');
+
+  function showTestimonial() {
+    testimonials.forEach((t, i) => {
+      t.classList.remove('active');
+    });
+    testimonials[index].classList.add('active');
+    index = (index + 1) % testimonials.length;
+  }
+
+  // Initial call and auto-slide every 6 seconds
+  showTestimonial();
+  setInterval(showTestimonial, 6000);
+  </script>
 </body>
 </html>
