@@ -98,6 +98,53 @@
   color: #fff;
   text-align: center;
     }
+    .project-card {
+  width: 300px;
+  background: #1b1b1b;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.status.sold {
+  background: #8b0000;
+  color: #fff;
+}
+
+.status.ongoing {
+  background: #ffd700;
+  color: #000;
+}
+
+.status.upcoming {
+  background: #444;
+  color: #ccc;
+}
 </style>
 <style>
   /* Load Google Fonts in your <head>:
@@ -405,11 +452,14 @@
 
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
     
-    <div class="fade-card" style="max-width:300px;">
-      <h3>🏡 Lekki Smart Villas</h3>
-      <p>Luxury residential units in Lekki, Lagos – sold out in 3 months.</p>
-      <span style="color:#00ffcc; font-size:0.85rem;">Status: Sold Out</span>
-    </div>
+    <div class="project-card">
+  <img src="projects/lekki-villas.jpg" alt="Lekki Smart Villas">
+  <div class="project-content">
+    <h3>🏡 Lekki Smart Villas</h3>
+    <p>Luxury residential units in Lekki, Lagos – sold out in 3 months.</p>
+    <span class="status sold">Sold Out</span>
+  </div>
+</div>
 
     <div class="fade-card" style="max-width:300px;">
       <h3>🌴 Epe Eco Estate</h3>
