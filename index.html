@@ -737,5 +737,19 @@
     }
   }
 </style>
+  <script>
+  const fadeItems = document.querySelectorAll('.scroll-fade');
+
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  fadeItems.forEach(el => fadeObserver.observe(el));
+  </script>
 </body>
 </html>
