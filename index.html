@@ -363,22 +363,28 @@
   }
 
   /* ========== TESTIMONIAL SLIDER ========== */
-  .testimonial {
-    display: none;
-    opacity: 0;
-    transition: opacity 1s ease;
-    position: absolute;
-    width: 100%;
-  }
-
-  .testimonial.active {
-    display: block;
-    opacity: 1;
-    position: relative;
-  }
   #testimonial-slider {
-  min-height: 120px;
-      }
+  position: relative;
+  min-height: 140px;
+  overflow: hidden;
+}
+
+.testimonial {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease;
+}
+
+.testimonial.active {
+  opacity: 1;
+  z-index: 2;
+}
+  .testimonial {
+  transition: opacity 1s ease-in-out;
+  }
 
   /* ========== RESPONSIVE ========== */
   @media (max-width: 600px) {
