@@ -621,5 +621,36 @@
     });
   });
 </script>
+  <a href="#contact" class="sticky-cta">Start Investing 🚀</a>
+
+<style>
+  .sticky-cta {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #ffd700;
+    color: #000;
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .sticky-cta:hover {
+    background: #e6c200;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .sticky-cta {
+      font-size: 0.85rem;
+      padding: 12px 16px;
+    }
+  }
+</style>
 </body>
 </html>
