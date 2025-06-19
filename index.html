@@ -644,21 +644,22 @@
 </script>
   
   <script>
-  let index = 0;
-  const testimonials = document.querySelectorAll('.testimonial');
+  document.addEventListener("DOMContentLoaded", () => {
+    let index = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
 
-  function showTestimonial() {
-    testimonials.forEach((t, i) => {
-      t.classList.remove('active');
-    });
-    testimonials[index].classList.add('active');
-    index = (index + 1) % testimonials.length;
-  }
+    function showTestimonial() {
+      testimonials.forEach((t, i) => {
+        t.classList.remove('active');
+      });
+      testimonials[index].classList.add('active');
+      index = (index + 1) % testimonials.length;
+    }
 
-  // Initial call and auto-slide every 6 seconds
-  showTestimonial();
-  setInterval(showTestimonial, 6000);
-  </script>
+    showTestimonial(); // initial call
+    setInterval(showTestimonial, 6000); // rotate every 6s
+  });
+</script>
 
   <!-- FOOTER -->
 <footer style="background:#000; color:#ccc; padding:40px 20px; text-align:center; font-size:0.9rem;">
