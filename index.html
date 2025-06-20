@@ -1203,5 +1203,15 @@
       card.classList.toggle('expanded');
     }
   </script>
+  <script>
+  let currentTestimonial = 0;
+  const testimonials = document.querySelectorAll('.testimonial');
+
+  setInterval(() => {
+    testimonials[currentTestimonial].classList.remove('active');
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    testimonials[currentTestimonial].classList.add('active');
+  }, 5000);
+  </script>
 </body>
 </html>
