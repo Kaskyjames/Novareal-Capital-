@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign Up | Novareal Capital</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: #111;
@@ -13,22 +17,48 @@
       padding: 0;
     }
 
+    header {
+      background: #000;
+      padding: 15px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    header h1 {
+      color: #ffd700;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #000, #013f31);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+
     .container {
-      max-width: 400px;
-      margin: 60px auto;
+      max-width: 500px;
+      margin: 40px auto;
       background: #1a1a1a;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     }
 
-    h2 {
-      text-align: center;
-      color: #ffd700;
-      margin-bottom: 20px;
-    }
-
-    input {
+    form input {
       width: 100%;
       padding: 12px;
       margin: 10px 0;
@@ -39,7 +69,7 @@
       font-size: 0.95rem;
     }
 
-    button {
+    form button {
       width: 100%;
       padding: 12px;
       background: #ffd700;
@@ -49,10 +79,11 @@
       border-radius: 6px;
       font-size: 1rem;
       cursor: pointer;
-      margin-top: 15px;
+      margin-top: 10px;
+      transition: background 0.3s ease;
     }
 
-    button:hover {
+    form button:hover {
       background: #e6c200;
     }
 
@@ -70,31 +101,50 @@
     .footer-link a:hover {
       text-decoration: underline;
     }
+
+    footer {
+      background: #000;
+      padding: 30px 20px;
+      text-align: center;
+      color: #777;
+      font-size: 0.85rem;
+      margin-top: 60px;
+    }
   </style>
 </head>
 <body>
 
+  <header>
+    <h1>Novareal Capital</h1>
+  </header>
+
+  <section class="hero">
+    <h2>Join the Future of Real Estate Investment</h2>
+    <p>Create a free Novareal account to access exclusive property deals, investment opportunities, and premium services.</p>
+  </section>
+
   <div class="container">
-    <h2>Create Your Account</h2>
     <form>
       <input type="text" placeholder="First Name" required>
       <input type="text" placeholder="Last Name" required>
       <input type="email" placeholder="Email Address" required>
-      <input type="phone" placeholder="Mobile Phone Number" required>
-      <input type="address" placeholder="Current Resident Address" required>
-      <input type="city" placeholder="Current City" required>
-      <input type="country" placeholder="Country of Origin" required>
+      <input type="tel" placeholder="Mobile Phone Number" required>
+      <input type="text" placeholder="Current Resident Address" required>
+      <input type="text" placeholder="City" required>
+      <input type="text" placeholder="Country of Origin" required>
       <input type="password" placeholder="Password" required>
       <input type="password" placeholder="Confirm Password" required>
-      <button type="submit">Sign Up</button>
+      <button type="submit">Create Account</button>
     </form>
+
     <div class="footer-link">
       Already have an account? <a href="login.html">Login here</a>
     </div>
   </div>
-<!-- Footer -->
+
   <footer>
     &copy; 2025 Novareal Capital | All rights reserved.
   </footer>
+
 </body>
 </html>
