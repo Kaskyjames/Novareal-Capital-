@@ -75,6 +75,25 @@
   }(jQuery));
   var $mcj = jQuery.noConflict(true);
 </script>
+
+  <style>
+  .fade-slide {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlideUp 1.4s ease-out forwards;
+  }
+
+  .fade-slide.delay {
+    animation-delay: 0.5s;
+  }
+
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  </style>
   
   <style>
     .fade-card {
