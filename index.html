@@ -762,18 +762,47 @@
   <div id="testimonial-slider">
     <div class="testimonial active">
       <p style="font-style:italic; font-size:1.1rem;">“Investing with Novareal Capital was the smartest move I made. Their professionalism and transparency are unmatched.”</p>
-      <p style="margin-top:15px; font-weight:500;">— Adewale A., UK</p>
+      <p style="margin-top:15px; font-weight:500;">— Robert A., UK</p>
     </div>
 
     <div class="testimonial">
       <p style="font-style:italic; font-size:1.1rem;">“They helped me invest back home while I was in Canada. The process was seamless, and the returns are real.”</p>
-      <p style="margin-top:15px; font-weight:500;">— Amaka O., Canada</p>
+      <p style="margin-top:15px; font-weight:500;">— Rose O., Canada</p>
     </div>
 
     <div class="testimonial">
       <p style="font-style:italic; font-size:1.1rem;">“From land banking to estate projects, Novareal delivers. I’ve reinvested twice already.”</p>
-      <p style="margin-top:15px; font-weight:500;">— Samuel T., UAE</p>
+      <p style="margin-top:15px; font-weight:500;">— Alberta T., UAE</p>
     </div>
+  </div>
+</section>
+
+  <!-- CONTACT SECTION -->
+<section id="contact" style="background:#0d0d0d; padding:80px 20px; color:#fff;">
+  <h2 style="text-align:center; color:#ffd700; font-size:2rem; margin-bottom:40px;">Get in Touch</h2>
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; max-width:1100px; margin:0 auto;">
+
+    <!-- Contact Form -->
+    <form style="flex:1; min-width:300px; background:#1a1a1a; padding:30px; border-radius:12px; box-shadow:0 8px 16px rgba(0,0,0,0.5);" netlify>
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:12px; margin-bottom:15px; border:none; border-radius:6px; background:#222; color:#fff;">
+      <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:12px; margin-bottom:15px; border:none; border-radius:6px; background:#222; color:#fff;">
+      <textarea name="message" rows="5" placeholder="Your Message" required style="width:100%; padding:12px; border:none; border-radius:6px; background:#222; color:#fff;"></textarea>
+      <button type="submit" class="cta-button" style="margin-top:20px;">Send Message</button>
+    </form>
+
+    <!-- Contact Info -->
+    <div style="flex:1; min-width:280px; padding:10px;">
+      <h3 style="color:#ffd700;">📞 Contact Info</h3>
+      <p style="margin:10px 0;">Phone: <a href="tel:+40733760917" style="color:#00ffcc;">+407 337 60917</a></p>
+      <p style="margin:10px 0;">Email: <a href="mailto:hello@novarealcapital.com" style="color:#00ffcc;">hello@novarealcapital.com</a></p>
+      <p style="margin:10px 0;">Office: California, United States</p>
+
+      <h3 style="color:#ffd700; margin-top:30px;">🗓️ Strategy Call</h3>
+      <p>Need help with your real estate journey? Book a 1-on-1 strategy call and let’s map your investment path.</p>
+      <a href="#contact" class="cta-button" style="margin-top:15px;">Book Now</a>
+    </div>
+
   </div>
 </section>
 
@@ -1049,24 +1078,6 @@
   }, { threshold: 0.3 });
 
   cards.forEach(card => observer.observe(card));
-</script>
-  
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    let index = 0;
-    const testimonials = document.querySelectorAll('.testimonial');
-
-    function showTestimonial() {
-      testimonials.forEach((t, i) => {
-        t.classList.remove('active');
-      });
-      testimonials[index].classList.add('active');
-      index = (index + 1) % testimonials.length;
-    }
-
-    showTestimonial(); // initial call
-    setInterval(showTestimonial, 6000); // rotate every 6s
-  });
 </script>
   
      <!--  Newsletter  -->
