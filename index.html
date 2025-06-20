@@ -626,11 +626,13 @@
   </div>
 </section>
 <!-- Investment Plans Section -->  
-  <section id="investment" style="background: url('investment-bg.jpg') center/cover no-repeat; padding: 80px 20px; color: #fff;">
-  <div style="background-color: rgba(0, 0, 0, 0.7); padding: 60px 20px; border-radius: 12px; max-width: 1200px; margin: 0 auto;">
+  <section id="investment" style="position: relative; padding: 80px 20px; color: #fff; background: url('investment-bg.jpg') center/cover no-repeat;">
+  <!-- Overlay -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 0;"></div>
+
+  <!-- Content -->
+  <div style="position: relative; z-index: 1; background-color: rgba(0, 0, 0, 0.6); padding: 60px 20px; border-radius: 12px; max-width: 1200px; margin: 0 auto;">
     <h2 style="text-align: center; font-size: 2.5rem; color: #ffd700; margin-bottom: 40px;">Investment Plans</h2>
-    <div class="plans-container">
-      <h2>Choose Your Investment Path</h2>
       <div class="grid"><!-- Plan 1 -->
     <div class="plan-card" onclick="toggleDetails(this)">
       <h3 style="color:#00ffcc;">🟢 Foundation Access</h3>
