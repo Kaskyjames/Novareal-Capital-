@@ -52,35 +52,58 @@
       color: #ffd700;
     }
 
-    .blog-container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .blog-post {
-      background: #1a1a1a;
-      padding: 25px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      border: 1px solid #333;
-    }
-
-    .blog-post h2 {
-      color: #ffd700;
-      margin-bottom: 10px;
-    }
-
-    .blog-post p {
+    .blog-hero p {
       color: #ccc;
+    }
+
+    .blog-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .blog-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .blog-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 320px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-card h3 {
+      color: #ffd700;
+      margin: 0 0 10px;
+    }
+
+    .blog-card p {
+      color: #ccc;
+      font-size: 0.95rem;
       line-height: 1.6;
     }
 
-    .blog-post a {
+    .blog-card a {
       color: #00ffcc;
       text-decoration: underline;
+      font-size: 0.9rem;
       display: inline-block;
       margin-top: 10px;
+    }
+
+    .blog-card div {
+      padding: 20px;
     }
 
     footer {
@@ -91,74 +114,6 @@
       font-size: 0.85rem;
     }
   </style>
-  <style>
-  body {
-    background: #0a0a0a;
-    color: #eee;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  .blog-header {
-    background: #000;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  .blog-header h1 {
-    font-size: 2.5rem;
-    color: #ffd700;
-    margin-bottom: 10px;
-  }
-
-  .blog-header p {
-    font-size: 1.1rem;
-    color: #ccc;
-  }
-
-  .blog-container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .blog-post {
-    background: #1a1a1a;
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid #2e2e2e;
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.05);
-  }
-
-  .blog-post h2 {
-    color: #ffd700;
-    margin-bottom: 10px;
-  }
-
-  .blog-post p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #ccc;
-  }
-
-  .blog-post small {
-    color: #888;
-    font-size: 0.85rem;
-  }
-
-  @media (max-width: 600px) {
-    .blog-header h1 {
-      font-size: 2rem;
-    }
-    .blog-post {
-      padding: 20px;
-    }
-  }
-  </style>
 </head>
 <body>
 
@@ -168,67 +123,58 @@
       <div style="color:#ffd700; font-weight:bold; font-size:1.2rem;">Novareal Capital</div>
       <div>
         <a href="index.html">Home</a>
-        <a href="blog.html" style="color:#ffd700; font-weight:600; font-size:0.95rem;">Blog</a>
+        <a href="blog.html">Blog</a>
       </div>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section style="background:#111; padding:60px 20px; color:#fff;">
-  <h2 style="text-align:center; color:#ffd700; font-size:2rem; margin-bottom:40px;">Novareal Insights & Strategies</h2>
-
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; max-width:1200px; margin:0 auto;">
-
-    <!-- Blog 1 -->
-    <div style="background:#1a1a1a; border-radius:12px; overflow:hidden; width:320px; box-shadow:0 4px 12px rgba(0,0,0,0.4);">
-      <img src="blog/diaspora-tips.jpg" alt="Diaspora Tips" style="width:100%; height:180px; object-fit:cover;">
-      <div style="padding:20px;">
-        <h3 style="color:#ffd700;">Top 5 Real Estate Tips for the Diaspora</h3>
-        <p style="color:#ccc; font-size:0.95rem;">How to avoid scams, vet property deals, and work with trusted partners while living abroad.</p>
-        <a href="#" style="color:#00ffcc; text-decoration:underline; font-size:0.9rem;">Read More →</a>
-      </div>
-    </div>
-
-    <!-- Blog 2 -->
-    <div style="background:#1a1a1a; border-radius:12px; overflow:hidden; width:320px; box-shadow:0 4px 12px rgba(0,0,0,0.4);">
-      <img src="blog/land-banking.jpg" alt="Land Banking" style="width:100%; height:180px; object-fit:cover;">
-      <div style="padding:20px;">
-        <h3 style="color:#ffd700;">Land Banking Strategy: Wealth Through Patience</h3>
-        <p style="color:#ccc; font-size:0.95rem;">Learn how land banking works, who it’s for, and how Novareal makes it profitable.</p>
-        <a href="#" style="color:#00ffcc; text-decoration:underline; font-size:0.9rem;">Read More →</a>
-      </div>
-    </div>
-
-    <!-- Blog 3 -->
-    <div style="background:#1a1a1a; border-radius:12px; overflow:hidden; width:320px; box-shadow:0 4px 12px rgba(0,0,0,0.4);">
-      <img src="blog/german-duplex.jpg" alt="German Investor in California" style="width:100%; height:180px; object-fit:cover;">
-      <div style="padding:20px;">
-        <h3 style="color:#ffd700;">How We Helped a German in Canada Buy a Duplex in Fremont</h3>
-        <p style="color:#ccc; font-size:0.95rem;">From property scouting to closing — see how we made international investing seamless.</p>
-        <a href="#" style="color:#00ffcc; text-decoration:underline; font-size:0.9rem;">Read More →</a>
-      </div>
-    </div>
-
-  </div>
+  <!-- Hero Section -->
+  <section class="blog-hero">
+    <h1>Real Estate Insights & Investor Guides</h1>
+    <p>Tips, news, and smart strategies for diaspora & global investors.</p>
   </section>
-  
+
+  <!-- Blog Cards Section -->
+  <section class="blog-section">
+    <div class="blog-grid">
+
+      <!-- Blog 1 -->
+      <div class="blog-card">
+        <img src="blog/diaspora-tips.jpg" alt="Diaspora Tips">
+        <div>
+          <h3>Top 5 Real Estate Tips for the Diaspora</h3>
+          <p>How to avoid scams, vet property deals, and work with trusted partners while living abroad.</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
+
+      <!-- Blog 2 -->
+      <div class="blog-card">
+        <img src="blog/land-banking.jpg" alt="Land Banking">
+        <div>
+          <h3>Land Banking Strategy: Wealth Through Patience</h3>
+          <p>Learn how land banking works, who it’s for, and how Novareal makes it profitable.</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
+
+      <!-- Blog 3 -->
+      <div class="blog-card">
+        <img src="blog/german-duplex.jpg" alt="German Investor">
+        <div>
+          <h3>How We Helped a German in Canada Buy a Duplex in Fremont</h3>
+          <p>From property scouting to closing — see how we made international investing seamless.</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     &copy; 2025 Novareal Capital | All rights reserved.
   </footer>
-
-  <script>
-  // Smooth scroll for anchor links (if any)
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-  </script>
 
 </body>
 </html>
