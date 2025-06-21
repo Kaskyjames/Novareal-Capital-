@@ -90,5 +90,9 @@ window.addEventListener('scroll', () => {
     slides[i].classList.add('active');
   }, 6000);
 });
+  window.addEventListener('load', () => {
+  const loader = document.getElementById('preloader');
+  if (loader) { loader.style.display = 'none'; }
+});
 });
 
