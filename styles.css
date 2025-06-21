@@ -363,3 +363,67 @@
   color: #ffd700;
   font-size: 1rem;
 }
+/* CONTACT SECTION */
+#contact {
+  background: #0a0a0a;
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 260px;
+  text-align: left;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #ffd700;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #e6c200;
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}
