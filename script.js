@@ -80,4 +80,15 @@ window.addEventListener('scroll', () => {
       link.classList.remove('active-link');
     }
   });
+  document.addEventListener('DOMContentLoaded', () => {
+  const tSlider = document.getElementById('testimonial-slider');
+  const slides = tSlider.querySelectorAll('.testimonial');
+  let i = 0;
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 6000);
 });
+});
+
