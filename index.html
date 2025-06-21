@@ -219,6 +219,27 @@
       opacity: 1;
       transform: translateY(0);
     }
+    .testimonial-controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.testimonial-controls button {
+  background: transparent;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  font-size: 1.5rem;
+  padding: 6px 14px;
+  margin: 0 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-controls button:hover {
+  background: #ffd700;
+  color: #000;
+}
   }
   </style>
   
@@ -406,6 +427,7 @@
   opacity: 1;
   transform: translateY(0);
 }
+    
 </style>
 <style>
   /* Load Google Fonts in your <head>:
@@ -538,30 +560,7 @@
     color: #bbb;
   }
 
-  /* ========== TESTIMONIAL SLIDER ========== */
-  #testimonial-slider {
-  position: relative;
-  min-height: 140px;
-  overflow: hidden;
-}
-
-.testimonial {
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  transition: opacity 1s ease;
-}
-
-.testimonial.active {
-  opacity: 1;
-  z-index: 2;
-}
-  .testimonial {
-  transition: opacity 1s ease-in-out;
-  }
-
+  
   /* ========== RESPONSIVE ========== */
   @media (max-width: 600px) {
     .hero p {
@@ -847,21 +846,21 @@
 <section id="testimonials" style="background:#111; padding:80px 20px; color:#fff; text-align:center;">
   <h2 style="color:#ffd700; font-size:2rem; margin-bottom:50px;">What Our Clients Say</h2>
 
-  <div id="testimonial-slider">
-    <div class="testimonial active">
+  <div id="testimonial-controls">
+    <button onclick="prevTestimonial()">
       <p style="font-style:italic; font-size:1.1rem;">“Investing with Novareal Capital was the smartest move I made. Their professionalism and transparency are unmatched.”</p>
       <p style="margin-top:15px; font-weight:500;">— Robert A., UK</p>
-    </div>
+    </button>
 
-    <div class="testimonial">
+    <button onclick="nextTestimonial()">
       <p style="font-style:italic; font-size:1.1rem;">“They helped me invest back home while I was in Canada. The process was seamless, and the returns are real.”</p>
       <p style="margin-top:15px; font-weight:500;">— Rose O., Canada</p>
-    </div>
+    </button>
 
-    <div class="testimonial">
+    <button onclick="nextTestimonial()">
       <p style="font-style:italic; font-size:1.1rem;">“From land banking to estate projects, Novareal delivers. I’ve reinvested twice already.”</p>
       <p style="margin-top:15px; font-weight:500;">— Alberta T., UAE</p>
-    </div>
+    </button>
   </div>
 </section>
 
@@ -1097,14 +1096,28 @@
   });
   </script>
   <script>
-  let currentTestimonial = 0;
-  const testimonials = document.querySelectorAll('.testimonial');
+  let testimonials = document.querySelectorAll('.testimonial');
+  let current = 0;
 
-  setInterval(() => {
-    testimonials[currentTestimonial].classList.remove('active');
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    testimonials[currentTestimonial].classList.add('active');
-  }, 5000);
+  function showTestimonial(index) {
+    testimonials.forEach((el, i) => {
+      el.classList.remove('active');
+      if (i === index) el.classList.add('active');
+    });
+  }
+
+  function nextTestimonial() {
+    current = (current + 1) % testimonials.length;
+    showTestimonial(current);
+  }
+
+  function prevTestimonial() {
+    current = (current - 1 + testimonials.length) % testimonials.length;
+    showTestimonial(current);
+  }
+
+  // Auto-scroll every 6 seconds
+  setInterval(nextTestimonial, 6000);
   </script>
   <!-- Scroll to Top Button -->
 <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">↑</button>
