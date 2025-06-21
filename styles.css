@@ -200,3 +200,52 @@
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
+/* VISION & VALUES SECTION */
+#values {
+  background: #111;
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: #ffd700;
+  margin-bottom: 40px;
+}
+
+.values-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.value-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 25px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card h3 {
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.value-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(255, 215, 0, 0.15);
+}
