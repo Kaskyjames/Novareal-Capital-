@@ -11,3 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.style.display = 'none';
   });
 });
+// Testimonial slider
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+
+function showNextTestimonial() {
+  testimonials[currentTestimonial].classList.remove('active');
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+  testimonials[currentTestimonial].classList.add('active');
+}
+
+// Change every 6 seconds
+setInterval(showNextTestimonial, 6000);
