@@ -76,6 +76,28 @@
   var $mcj = jQuery.noConflict(true);
 </script>
   <style>
+    /* Scroll to Top Button */
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ffd700;
+  color: #000;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: background 0.3s ease;
+}
+
+#scrollBtn:hover {
+  background-color: #e6c200;
+}
     #contact input,
 #contact textarea {
   font-family: 'Poppins', sans-serif;
@@ -1005,6 +1027,22 @@
     }
   }
 </style>
+  <script>
+  // Show button when scrolling
+  window.onscroll = function() {
+    let scrollBtn = document.getElementById("scrollBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  };
+
+  // Scroll to top when clicked
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  </script>
   <script>
   const fadeItems = document.querySelectorAll('.scroll-fade');
 
