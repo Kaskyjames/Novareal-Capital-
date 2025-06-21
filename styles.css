@@ -1,0 +1,340 @@
+/* ==== BASE STYLES ==== */
+body, p, span, li {
+  font-family: 'Poppins', sans-serif;
+  background: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+/* ==== HERO SECTION ==== */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: fadeSlide 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #eee;
+  animation: fadeSlide 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
+.hero-buttons {
+  animation: fadeSlide 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 1s;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==== CTA BUTTONS ==== */
+.cta-button {
+  display: inline-block;
+  padding: 14px 28px;
+  margin: 10px;
+  background-color: #ffd700;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background-color: #e6c200;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+}
+
+.cta-button.secondary:hover {
+  background-color: #ffd700;
+  color: #000;
+}
+
+/* ==== FADE CARD ==== */
+.fade-card {
+  background: #1e1e1e;
+  padding: 25px;
+  border-radius: 12px;
+  width: 300px;
+  border: 1px solid #2e2e2e;
+  color: #fff;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-in-out;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.08);
+}
+
+.fade-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+.fade-card h3 {
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.fade-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* ==== INVESTMENT PLANS ==== */
+.plan-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.plan-card h3 {
+  margin-top: 0;
+}
+
+.plan-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.plan-card.expanded .plan-details {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* ==== PROJECT CARD ==== */
+.project-card {
+  width: 300px;
+  background: #1b1b1b;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.status.sold {
+  background: #8b0000;
+  color: #fff;
+}
+
+.status.ongoing {
+  background: #ffd700;
+  color: #000;
+}
+
+.status.upcoming {
+  background: #444;
+  color: #ccc;
+}
+
+/* ==== SCROLL ANIMATION ==== */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-in-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==== SCROLL TO TOP ==== */
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ffd700;
+  color: #000;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: background 0.3s ease;
+}
+
+#scrollBtn:hover {
+  background-color: #e6c200;
+}
+
+/* ==== RESPONSIVE DESIGN ==== */
+@media (max-width: 768px) {
+  #contact div {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .highlight-box {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 120px 40px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    max-width: 900px;
+    margin: 0 auto 20px;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+  }
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  section#investors div,
+  section#services div,
+  section#projects div {
+    gap: 30px;
+    padding: 0 40px;
+  }
+  footer {
+    font-size: 1rem;
+    padding: 60px 40px;
+  }
+  footer h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ==== ACTIVE LINK ==== */
+nav a.active-link {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+/* ==== SMOOTH SCROLL ==== */
+html {
+  scroll-behavior: smooth;
+}
