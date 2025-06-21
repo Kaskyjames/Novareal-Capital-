@@ -94,5 +94,12 @@ window.addEventListener('scroll', () => {
   const loader = document.getElementById('preloader');
   if (loader) { loader.style.display = 'none'; }
 });
+  function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  lb.style.display = 'flex';
+  lb.addEventListener('click', () => lb.style.display = 'none');
+  }
 });
 
