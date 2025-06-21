@@ -280,4 +280,7 @@ h1, h2, h3, h4, h5 {
   .hero p {
     font-size: 1rem;
   }
+  #testimonial-slider { position: relative; min-height: 140px; overflow: hidden; }
+.testimonial { position: absolute; top: 0; left: 0; width: 100%; opacity: 0; transition: opacity 1s ease; }
+.testimonial.active { opacity: 1; z-index: 2; }
 }
