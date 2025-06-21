@@ -23,3 +23,16 @@ function showNextTestimonial() {
 
 // Change every 6 seconds
 setInterval(showNextTestimonial, 6000);
+// Scroll-fade animation
+const elements = document.querySelectorAll('.scroll-fade');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+elements.forEach(el => observer.observe(el));
