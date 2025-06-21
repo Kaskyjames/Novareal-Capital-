@@ -66,3 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(showTestimonial, 6000);
   }
 });
+
+const navLinks = document.querySelectorAll('header nav a');
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY + 120; // adjust offset
+  navLinks.forEach(link => {
+    if (!link.hash) return;
+    const section = document.querySelector(link.hash);
+    if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add('active-link');
+    } else {
+      link.classList.remove('active-link');
+    }
+  });
+});
