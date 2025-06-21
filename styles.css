@@ -19,26 +19,19 @@ h1, h2, h3, h4, h5 {
 
 /* === Hero Section === */
 #hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  position: relative;
 }
-
 #hero video {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
   min-width: 100%;
   min-height: 100%;
-  transform: translate(-50%, -50%);
   object-fit: cover;
-  z-index: 1;
 }
-
 .video-overlay {
   position: absolute;
   top: 0;
@@ -54,20 +47,6 @@ h1, h2, h3, h4, h5 {
   z-index: 3;
   color: #fff;
   padding: 0 20px;
-}
-#hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-#hero video {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
 }
 
 /* === Buttons === */
