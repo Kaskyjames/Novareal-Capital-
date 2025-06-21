@@ -1,4 +1,4 @@
-rg<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta name="google-site-verification" content="TN20kGwCmfpycW-CU1fJda99lyqq-sogagb1iTNfSwQ" />
@@ -77,6 +77,45 @@ rg<!DOCTYPE html>
 </script>
 
   <style>
+    #contact input,
+#contact textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+#contact form button:hover {
+  background: #e6c200;
+}
+
+#contact h2, #contact p, #contact input, #contact textarea, #contact button {
+  animation: fadeInUp 0.9s ease forwards;
+  opacity: 0;
+}
+
+#contact h2 { animation-delay: 0.2s; }
+#contact p { animation-delay: 0.4s; }
+#contact input:nth-child(1) { animation-delay: 0.6s; }
+#contact input:nth-child(2) { animation-delay: 0.8s; }
+#contact textarea { animation-delay: 1s; }
+#contact button { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  #contact div {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
     #hero {
   position: relative;
   height: 100vh;
@@ -816,44 +855,6 @@ rg<!DOCTYPE html>
 
   </div>
 </section>
-
-  <!--  Newsletter  -->
-  <section id="newsletter" style="background: #f5f5f5; padding: 2rem;">
-  <div style="max-width: 600px; margin: auto;">
-    <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem;">Subscribe to Novareal Updates</h2>
-    
-    <!-- Mailchimp Form Starts -->
-    <div id="mc_embed_signup">
-      <form action="https://app.us22.list-manage.com/subscribe/post?u=25851b3b6e4457a37184cfa2e&amp;id=d9a1c9c91f&amp;f_id=00e5c2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-        <div id="mc_embed_signup_scroll">
-          <div class="mc-field-group">
-            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
-          </div>
-          
-          <div class="mc-field-group">
-            <label for="mce-FNAME">First Name</label>
-            <input type="text" name="FNAME" class="" id="mce-FNAME">
-          </div>
-
-          <div class="mc-field-group">
-            <label for="mce-INVEST">Investment Interest</label>
-            <input type="text" name="INVEST" class="" id="mce-INVEST">
-          </div>
-
-          <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <input type="text" name="b_25851b3b6e4457a37184cfa2e_d9a1c9c91f" tabindex="-1" value="">
-          </div>
-
-          <div class="clear">
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="margin-top: 10px; background: #000; color: #fff; border: none; padding: 10px 20px; cursor: pointer;">
-          </div>
-        </div>
-      </form>
-    </div>
-    <!-- Mailchimp Form Ends -->
-  </div>
-  </section>
 
   <!-- ========== FOOTER ========== -->
 <footer style="background:#000; padding:60px 20px; color:#fff;">
