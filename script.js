@@ -10,3 +10,7 @@ document.addEventListener("click", function (e) {
     document.getElementById("lightbox").style.display = "none";
   }
 });
+
+function toggleDetails(card) {
+  card.classList.toggle("expanded");
+}
