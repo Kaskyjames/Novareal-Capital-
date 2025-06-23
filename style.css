@@ -348,72 +348,7 @@
   background: #444;
   color: #ccc;
 }
-.investment-section {
-  background: #0a0a0a;
-  padding: 100px 20px;
-  color: #fff;
-  text-align: center;
-}
 
-.investment-section h2 {
-  font-size: 2.4rem;
-  color: #ffd700;
-  margin-bottom: 40px;
-  font-family: 'Playfair Display', serif;
-}
-
-.investment-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.plan-card {
-  background: #1a1a1a;
-  padding: 25px;
-  border-radius: 12px;
-  border: 1px solid #333;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.plan-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.1);
-}
-
-.plan-card h3 {
-  color: #ffd700;
-  margin-bottom: 10px;
-}
-
-.plan-card p {
-  color: #ccc;
-  font-size: 0.95rem;
-}
-
-.plan-details {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  opacity: 0;
-  text-align: left;
-  margin-top: 15px;
-}
-
-.plan-card.expanded .plan-details {
-  max-height: 500px;
-  opacity: 1;
-}
-
-.plan-details ul {
-  padding-left: 20px;
-  color: #bbb;
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
 .testimonials-section {
   background: #111;
   padding: 100px 20px;
