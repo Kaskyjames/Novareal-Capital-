@@ -11,9 +11,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-function toggleDetails(card) {
-  card.classList.toggle("expanded");
-}
 let currentTestimonialIndex = 0;
 const testimonials = document.querySelectorAll('.testimonial');
 const prevButton = document.getElementById('prev-testimonial');
