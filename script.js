@@ -40,3 +40,9 @@ nextButton.addEventListener('click', () => {
 
 // Initialize first testimonial
 showTestimonial(currentTestimonialIndex);
+
+
+
+function togglePlan(card) {
+  card.classList.toggle('active');
+}
