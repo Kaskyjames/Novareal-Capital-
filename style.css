@@ -525,62 +525,57 @@
 }
 .newsletter-section {
   background: #111;
-  padding: 80px 20px;
-  color: #fff;
+  padding: 60px 20px;
   text-align: center;
+  color: #fff;
 }
 
 .newsletter-container {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .newsletter-container h2 {
-  color: #ffd700;
   font-size: 2rem;
+  color: #ffd700;
   margin-bottom: 10px;
 }
 
 .newsletter-container p {
   color: #ccc;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
 }
 
 .newsletter-form {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .newsletter-form input[type="email"] {
   padding: 12px;
-  width: 280px;
-  max-width: 100%;
+  border-radius: 6px;
   border: 1px solid #333;
   background: #1a1a1a;
   color: #fff;
-  border-radius: 6px;
+  width: 280px;
 }
 
 .newsletter-form button {
-  padding: 12px 20px;
+  padding: 12px 24px;
   background: #ffd700;
-  border: none;
   color: #000;
   font-weight: bold;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 .newsletter-form button:hover {
   background: #e6c200;
 }
-
-
-
-
 
 .investment-section {
   background: #0a0a0a;
