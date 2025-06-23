@@ -171,6 +171,23 @@
   max-width: 500px;
   margin: 0 auto;
 }
+    .analytics-section {
+  padding: 60px 20px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.analytics-chart {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.section-subtext {
+  color: #ccc;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
   </style>
 </head>
 <body>
@@ -202,7 +219,17 @@
       <p>15% Avg</p>
     </div>
   </div>
+  
+ <!-- Performance Analytics -->
+<section class="analytics-section">
+  <h2 class="section-title">📈 Performance Over Time</h2>
+  <p class="section-subtext">Track how your investment has performed in the last 6 months.</p>
 
+  <div class="analytics-chart">
+    <canvas id="performanceChart" width="600" height="250"></canvas>
+  </div>
+</section>
+  
   <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -226,6 +253,40 @@
           labels: {
             color: '#ccc'
           }
+        }
+      }
+    }
+  });
+  
+  const perfCtx = document.getElementById('performanceChart').getContext('2d');
+  new Chart(perfCtx, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label: 'Portfolio Value ($)',
+        data: [25000, 27000, 29000, 32000, 34000, 37500],
+        borderColor: '#ffd700',
+        backgroundColor: 'rgba(255, 215, 0, 0.1)',
+        tension: 0.3,
+        fill: true,
+        pointRadius: 5,
+        pointBackgroundColor: '#ffd700'
+      }]
+    },
+    options: {
+      scales: {
+        x: {
+          ticks: { color: '#ccc' }
+        },
+        y: {
+          ticks: { color: '#ccc' },
+          beginAtZero: false
+        }
+      },
+      plugins: {
+        legend: {
+          labels: { color: '#fff' }
         }
       }
     }
