@@ -53,6 +53,9 @@ function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  // ScrollReveal logic here
+});
 // ScrollReveal animation triggers
 ScrollReveal().reveal('.fade-in', {
   duration: 1200,
