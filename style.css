@@ -267,3 +267,84 @@
     transform: translateY(0);
   }
 }
+.projects-section {
+  background: #000;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.projects-section h2 {
+  font-size: 2.4rem;
+  color: #ffd700;
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  background: #111;
+  padding: 20px;
+  text-align: left;
+}
+
+.project-info h3 {
+  margin: 0;
+  color: #ffd700;
+}
+
+.project-info p {
+  margin: 5px 0;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.status.ongoing {
+  background: #ffd700;
+  color: #000;
+}
+
+.status.sold {
+  background: #8b0000;
+  color: #fff;
+}
+
+.status.upcoming {
+  background: #444;
+  color: #ccc;
+}
