@@ -594,3 +594,73 @@
 .newsletter-form button:hover {
   background: #e6c200;
 }
+
+
+
+
+
+.investment-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.investment-section h2 {
+  color: #ffd700;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.investment-intro {
+  color: #ccc;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plan-card {
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-align: left;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.1);
+}
+
+.plan-card h3 {
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.plan-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.plan-details {
+  margin-top: 15px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.plan-card.active .plan-details {
+  max-height: 300px;
+  opacity: 1;
+}
