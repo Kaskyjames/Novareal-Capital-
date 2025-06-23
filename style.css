@@ -151,3 +151,48 @@
     transform: translateY(0);
   }
 }
+
+.about-section {
+  background: #0a0a0a;
+  padding: 100px 20px;
+  color: #fff;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-text h2 {
+  color: #ffd700;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  color: #ccc;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
