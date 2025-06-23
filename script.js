@@ -52,3 +52,20 @@ function openLightbox(src) {
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
+
+// ScrollReveal Animations
+ScrollReveal().reveal('.fade-card', {
+  duration: 1200,
+  distance: '50px',
+  easing: 'ease-in-out',
+  origin: 'bottom',
+  interval: 100
+});
+
+ScrollReveal().reveal('section h2, .hero-content', {
+  duration: 1000,
+  distance: '40px',
+  origin: 'bottom',
+  easing: 'ease-in-out',
+  delay: 200
+});
