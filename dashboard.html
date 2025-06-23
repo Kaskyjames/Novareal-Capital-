@@ -6,30 +6,50 @@
   <title>Dashboard – Novareal Capital</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f8f8f8;
-      color: #222;
+      background: url('investment-bg.jpg') no-repeat center center / cover;
+      color: #fff;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
     }
 
     .dashboard-header {
-      background-color: #000;
-      color: #ffd700;
-      padding: 20px;
       text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .dashboard-header h1 {
+      font-size: 2rem;
+      color: #ffd700;
+    }
+
+    .dashboard-header p {
+      font-size: 1.1rem;
+      color: #ccc;
     }
 
     .dashboard-container {
       max-width: 1100px;
       margin: 40px auto;
       padding: 0 20px;
+      backdrop-filter: blur(8px);
     }
 
     .welcome {
       font-size: 1.6rem;
       margin-bottom: 30px;
+      font-weight: 500;
+      color: #fff;
     }
 
     .summary-cards {
@@ -42,24 +62,29 @@
     .summary-card {
       flex: 1;
       min-width: 220px;
-      background: #fff;
+      background: #111;
       border-left: 5px solid #ffd700;
       border-radius: 8px;
       padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .summary-card:hover {
+      transform: translateY(-5px);
     }
 
     .summary-card h3 {
       margin: 0;
       font-size: 1.1rem;
-      color: #444;
+      color: #ffd700;
     }
 
     .summary-card p {
       font-size: 1.8rem;
       font-weight: bold;
       margin-top: 10px;
-      color: #000;
+      color: #fff;
     }
 
     .quick-links {
@@ -73,16 +98,26 @@
       min-width: 180px;
       text-align: center;
       padding: 16px;
-      background-color: #000;
-      color: #ffd700;
+      background-color: #ffd700;
+      color: #000;
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      transition: background 0.3s;
+      transition: all 0.3s;
     }
 
     .quick-links a:hover {
-      background-color: #222;
+      background: #000;
+      color: #ffd700;
+      border: 1px solid #ffd700;
+    }
+
+    .chart-container {
+      margin: 40px auto;
+      background: #111;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
     }
 
     @media (max-width: 600px) {
@@ -93,27 +128,15 @@
   </style>
 </head>
 <body>
-  <aside class="sidebar">
-  <div class="brand-logo">
-    <img src="images/logo.png" alt="Logo" />
-    <h2>Novareal</h2>
-  </div>
-  <nav class="sidebar-nav">
-    <a href="#overview">📊 Overview</a>
-    <a href="#projects">🏗 Projects</a>
-    <a href="#">👤 Profile</a>
-    <a href="index.html">↩ Back to Site</a>
-    <a href="login.html">🚪 Logout</a>
-  </nav>
-  </aside>
+  <div class="overlay"></div>
 
   <div class="dashboard-header">
     <h1>Client Dashboard</h1>
-    <p>Welcome back, Investor</p>
+    <p>Welcome back, <strong>Investor James</strong></p>
   </div>
 
   <div class="dashboard-container">
-    <div class="welcome">📊 Your Investment Summary</div>
+    <div class="welcome">📊 Your Investment Snapshot</div>
 
     <div class="summary-cards">
       <div class="summary-card">
@@ -130,6 +153,10 @@
       </div>
     </div>
 
+    <div class="chart-container">
+      <canvas id="investmentChart" height="140"></canvas>
+    </div>
+
     <div class="quick-links">
       <a href="#projects">🔍 View Projects</a>
       <a href="#">⚙️ Edit Profile</a>
@@ -137,5 +164,32 @@
     </div>
   </div>
 
+  <script>
+    const ctx = document.getElementById('investmentChart');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Real Estate', 'Cash ROI', 'Pending'],
+        datasets: [{
+          label: 'Investment Allocation',
+          data: [70, 20, 10],
+          backgroundColor: ['#ffd700', '#444', '#888'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            labels: {
+              color: '#fff',
+              font: {
+                size: 14
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
