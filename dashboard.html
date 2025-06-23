@@ -125,71 +125,111 @@
         font-size: 1.5rem;
       }
     }
+    .portfolio-section {
+  padding: 60px 20px;
+  background: #0d0d0d;
+  color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 40px;
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.portfolio-card {
+  background: #1a1a1a;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  min-width: 180px;
+  flex: 1 1 200px;
+}
+
+.portfolio-card h3 {
+  color: #ccc;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.portfolio-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.chart-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
   </style>
 </head>
 <body>
   <div class="overlay"></div>
 
-  <div class="dashboard-header">
-    <h1>Client Dashboard</h1>
-    <p>Welcome back, <strong>Investor James</strong></p>
-  </div>
-
-  <div class="dashboard-container">
-    <div class="welcome">📊 Your Investment Snapshot</div>
-
-    <div class="summary-cards">
-      <div class="summary-card">
-        <h3>Total Invested</h3>
-        <p>$25,000</p>
-      </div>
-      <div class="summary-card">
-        <h3>ROI Earned</h3>
-        <p>$4,200</p>
-      </div>
-      <div class="summary-card">
-        <h3>Active Projects</h3>
-        <p>3</p>
-      </div>
+     <!-- Portfolio Breakdown -->
+<section class="portfolio-section">
+  <h2 class="section-title">📊 Portfolio Breakdown</h2>
+  
+  <div class="portfolio-grid">
+    <!-- Summary Cards -->
+    <div class="portfolio-card">
+      <h3>Total Invested</h3>
+      <p>$50,000</p>
     </div>
 
-    <div class="chart-container">
-      <canvas id="investmentChart" height="140"></canvas>
+    <div class="portfolio-card">
+      <h3>Total Returns</h3>
+      <p>$7,500</p>
     </div>
 
-    <div class="quick-links">
-      <a href="#projects">🔍 View Projects</a>
-      <a href="#">⚙️ Edit Profile</a>
-      <a href="login.html">🚪 Logout</a>
+    <div class="portfolio-card">
+      <h3>Active Plans</h3>
+      <p>3 Plans</p>
+    </div>
+
+    <div class="portfolio-card">
+      <h3>Portfolio ROI</h3>
+      <p>15% Avg</p>
     </div>
   </div>
 
-  <script>
-    const ctx = document.getElementById('investmentChart');
-    new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Real Estate', 'Cash ROI', 'Pending'],
-        datasets: [{
-          label: 'Investment Allocation',
-          data: [70, 20, 10],
-          backgroundColor: ['#ffd700', '#444', '#888'],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        plugins: {
-          legend: {
-            labels: {
-              color: '#fff',
-              font: {
-                size: 14
-              }
-            }
+  <!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('portfolioChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Land Banking', 'Estate Projects', 'Diaspora Housing'],
+      datasets: [{
+        label: 'Portfolio Breakdown',
+        data: [45, 35, 20],
+        backgroundColor: ['#ffd700', '#ff9900', '#29a19c'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            color: '#ccc'
           }
         }
       }
-    });
-  </script>
+    }
+  });
+</script>
 </body>
 </html>
