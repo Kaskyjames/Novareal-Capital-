@@ -247,6 +247,48 @@
 .download-statement button:hover {
   background: #ffea70;
 }
+    .updates-section {
+  margin: 60px auto;
+  padding: 20px;
+  max-width: 1000px;
+}
+
+.updates-section h2 {
+  text-align: center;
+  color: #ffd700;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.updates-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.update-card {
+  background: #1a1a1a;
+  border-left: 5px solid #ffd700;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.update-card h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.update-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.update-date {
+  font-size: 0.8rem;
+  color: #888;
+}
   </style>
 </head>
 <body>
@@ -316,6 +358,35 @@
     </div>
   </div>
 </section>
+
+       <!-- News and project update -->
+  <section class="updates-section">
+  <h2>📢 Latest News & Project Updates</h2>
+
+  <div class="updates-feed">
+    <div class="update-card">
+      <h4>🌍 Land Secured in Pennsylvania</h4>
+      <p>We’ve officially secured 150 acres in Bucks County for our upcoming luxury gated community development. Nestled in one of Pennsylvania’s most desirable residential areas—just outside Philadelphia—this project promises serene living, modern infrastructure, and long-term investment value.
+More details coming soon.</p>
+      <span class="update-date">June 24, 2025</span>
+    </div>
+
+    <div class="update-card">
+      <h4>🚧 Construction Underway in California</h4>
+      <p>We’ve officially broken ground on the NovaGreen Tower. Our flagship sustainable development in the heart of California. Designed to blend innovation, luxury, and environmental consciousness, this iconic project is now in motion.
+Estimated completion: Q3 2026. Stay tuned for construction updates.</p>
+      <span class="update-date">June 20, 2025</span>
+    </div>
+
+    <div class="update-card">
+      <h4>📈 Quarterly Q2 2025 Returns Published</h4>
+      <p>Our latest quarterly report is live—portfolio growth is up by 12% across key investments.
+Check your personal statement for full performance insights and detailed breakdowns.
+Thank you for growing with us.</p>
+      <span class="update-date">June 15, 2025</span>
+    </div>
+  </div>
+  </section>
   
   
   <!-- Chart.js CDN -->
