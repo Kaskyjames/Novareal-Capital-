@@ -352,6 +352,61 @@
   background-color: #007bff;
   color: #fff;
 }
+    .roi-calculator-section {
+  background: #0e0e0e;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.roi-calculator-section h2 {
+  color: #ffd700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.roi-calculator-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255,255,255,0.05);
+}
+
+.roi-calculator-form input,
+.roi-calculator-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #0d0d0d;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.roi-calculator-form button {
+  background: #ffd700;
+  color: #000;
+  padding: 12px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.roi-calculator-form button:hover {
+  background: #e6c200;
+}
+
+.roi-result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #00ff99;
+  font-weight: bold;
+}
   </style>
 </head>
 <body>
@@ -448,6 +503,30 @@ Check your personal statement for full performance insights and detailed breakdo
 Thank you for growing with us.</p>
       <span class="update-date">June 15, 2025</span>
     </div>
+  </div>
+  </section>
+
+  <!--- ROI Calculator --->
+  <section class="roi-calculator-section">
+  <h2>📊 ROI Calculator</h2>
+  <p>Estimate your returns before investing. Results are based on average expected ROI.</p>
+
+  <div class="roi-calculator-form">
+    <label for="investment-amount">Investment Amount ($):</label>
+    <input type="number" id="investment-amount" placeholder="Enter amount" />
+
+    <label for="plan-type">Select Plan:</label>
+    <select id="plan-type">
+      <option value="10">Starter Investor (10% in 3 months)</option>
+      <option value="18">Growth Investor (18% in 6 months)</option>
+      <option value="20">Legacy Builder (15–20% annually)</option>
+      <option value="25">Global Investor (18–25% annually)</option>
+      <option value="30">Premier Estate (25–30%+ annually)</option>
+    </select>
+
+    <button onclick="calculateROI()">Calculate ROI</button>
+
+    <div class="roi-result" id="roi-result"></div>
   </div>
   </section>
 
@@ -586,6 +665,22 @@ Thank you for growing with us.</p>
 
   doc.save("Novareal_Portfolio_Statement.pdf");
 }
+    
+    function calculateROI() {
+  const amount = parseFloat(document.getElementById("investment-amount").value);
+  const rate = parseFloat(document.getElementById("plan-type").value);
+  const resultDiv = document.getElementById("roi-result");
+
+  if (isNaN(amount) || amount <= 0) {
+    resultDiv.innerHTML = "Please enter a valid amount.";
+    return;
+  }
+
+  const roi = (amount * rate) / 100;
+  const total = amount + roi;
+
+  resultDiv.innerHTML = `📈 Estimated ROI: $${roi.toFixed(2)}<br>Total Value: $${total.toFixed(2)}`;
+    }
   </script>
 </body>
 </html>
