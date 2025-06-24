@@ -477,7 +477,31 @@
   </div>
 </section>
 
-       <!-- News and project update -->
+  <!--- ROI Calculator --->
+  <section class="roi-calculator-section">
+  <h2>📊 ROI Calculator</h2>
+  <p>Estimate your returns before investing. Results are based on average expected ROI.</p>
+
+  <div class="roi-calculator-form">
+    <label for="investment-amount">Investment Amount ($):</label>
+    <input type="number" id="investment-amount" placeholder="Enter amount" />
+
+    <label for="plan-type">Select Plan:</label>
+    <select id="plan-type">
+      <option value="10">Starter Investor (10% in 3 months)</option>
+      <option value="18">Growth Investor (18% in 6 months)</option>
+      <option value="20">Legacy Builder (15–20% annually)</option>
+      <option value="25">Global Investor (18–25% annually)</option>
+      <option value="30">Premier Estate (25–30%+ annually)</option>
+    </select>
+
+    <button onclick="calculateROI()">Calculate ROI</button>
+
+    <div class="roi-result" id="roi-result"></div>
+  </div>
+  </section>
+
+  <!-- News and project update -->
   <section class="updates-section">
   <h2>📢 Latest News & Project Updates</h2>
 
@@ -503,30 +527,6 @@ Check your personal statement for full performance insights and detailed breakdo
 Thank you for growing with us.</p>
       <span class="update-date">June 15, 2025</span>
     </div>
-  </div>
-  </section>
-
-  <!--- ROI Calculator --->
-  <section class="roi-calculator-section">
-  <h2>📊 ROI Calculator</h2>
-  <p>Estimate your returns before investing. Results are based on average expected ROI.</p>
-
-  <div class="roi-calculator-form">
-    <label for="investment-amount">Investment Amount ($):</label>
-    <input type="number" id="investment-amount" placeholder="Enter amount" />
-
-    <label for="plan-type">Select Plan:</label>
-    <select id="plan-type">
-      <option value="10">Starter Investor (10% in 3 months)</option>
-      <option value="18">Growth Investor (18% in 6 months)</option>
-      <option value="20">Legacy Builder (15–20% annually)</option>
-      <option value="25">Global Investor (18–25% annually)</option>
-      <option value="30">Premier Estate (25–30%+ annually)</option>
-    </select>
-
-    <button onclick="calculateROI()">Calculate ROI</button>
-
-    <div class="roi-result" id="roi-result"></div>
   </div>
   </section>
 
