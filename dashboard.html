@@ -6,6 +6,7 @@
   <title>Dashboard – Novareal Capital</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
@@ -225,6 +226,27 @@
   right: 20px;
   bottom: 10px;
 }
+    .download-statement {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.download-statement button {
+  background: #ffd700;
+  border: none;
+  padding: 12px 24px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.download-statement button:hover {
+  background: #ffea70;
+}
   </style>
 </head>
 <body>
@@ -290,6 +312,9 @@
   </div>
 </section>
   
+  <div class="download-statement">
+  <button onclick="generatePDF()">📄 Download Portfolio Statement</button>
+  </div>
   <!-- Chart.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -353,5 +378,35 @@
     }
   });
 </script>
+  <script>
+    function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(18);
+  doc.text("Novareal Capital Portfolio Statement", 20, 20);
+
+  doc.setFontSize(12);
+  doc.text("Investor: John Doe", 20, 35);
+  doc.text("Email: john@example.com", 20, 43);
+  doc.text("Date: " + new Date().toLocaleDateString(), 20, 51);
+
+  doc.setLineWidth(0.5);
+  doc.line(20, 60, 190, 60);
+
+  doc.text("Investment Breakdown", 20, 70);
+  doc.text("- Starter Plan ($2,500): 10% ROI - Completed", 20, 78);
+  doc.text("- Growth Plan ($10,000): 18% ROI - Active", 20, 86);
+  doc.text("- Legacy Builder: Upcoming", 20, 94);
+
+  doc.text("Performance Summary", 20, 110);
+  doc.text("- Total Invested: $12,500", 20, 118);
+  doc.text("- Total ROI Received: $250", 20, 126);
+  doc.text("- Next Payout: Aug 25, 2025", 20, 134);
+
+  doc.save("Novareal_Portfolio_Statement.pdf");
+}
+  </script>
 </body>
 </html>
