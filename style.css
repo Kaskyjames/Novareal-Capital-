@@ -1,3 +1,30 @@
+.activity-log-section {
+  background: #0a0a0a;
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.activity-log-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255,215,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.activity-entry {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.activity-entry:last-child {
+  border-bottom: none;
+}
+
 /* Header Navigation */
 .site-header {
   position: sticky;
