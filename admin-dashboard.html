@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Dashboard | Novareal Capital</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="dashboard-body">
 
@@ -46,6 +48,16 @@
       </div>
     </div>
   </section>
+
+  <!-- Chart Section -->
+<section class="chart-section">
+  <h2 style="text-align:center; color:#ffd700;">Platform Analytics</h2>
+  <div class="chart-grid">
+    <canvas id="growthChart"></canvas>
+    <canvas id="signupChart"></canvas>
+    <canvas id="planChart"></canvas>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="footer">
