@@ -111,6 +111,35 @@
   </form>
 </section>
 
+  <!-- Admin Investment Plan Editor -->
+<section class="plan-editor-section">
+  <h2 style="text-align:center; color:#ffd700;">💼 Manage Investment Plans</h2>
+  <div class="plan-editor-grid">
+
+    <!-- Editable Plan Card -->
+    <div class="plan-editor-card">
+      <input type="text" value="$2,500 - Starter Investor" />
+      <input type="text" value="ROI: 10% after 3 months" />
+      <button onclick="savePlan(this)">Save</button>
+    </div>
+
+    <div class="plan-editor-card">
+      <input type="text" value="$10,000 - Growth Investor" />
+      <input type="text" value="ROI: 18% after 6 months" />
+      <button onclick="savePlan(this)">Save</button>
+    </div>
+
+    <div class="plan-editor-card">
+      <input type="text" value="$25,000 - Legacy Builder" />
+      <input type="text" value="ROI: 15–20% annually" />
+      <button onclick="savePlan(this)">Save</button>
+    </div>
+
+    <!-- Add more plan cards as needed -->
+
+  </div>
+</section>
+
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 Novareal Capital – Admin Panel</p>
@@ -191,6 +220,13 @@ document.querySelector(".broadcast-form").addEventListener("submit", function (e
     this.reset();
   }, 4000);
 });
+
+    function savePlan(btn) {
+  const inputs = btn.parentElement.querySelectorAll('input');
+  const planTitle = inputs[0].value;
+  const planROI = inputs[1].value;
+  alert(`✅ Saved Plan:\n${planTitle}\n${planROI}`);
+    }
   </script>
 </body>
 </html>
