@@ -164,3 +164,52 @@ function declinePayout(index) {
 }
 
 document.addEventListener("DOMContentLoaded", renderWalletTable);
+
+const investors = [
+  { name: "Joy E.", email: "joye@gmail.com", investments: "$5,500", status: "Active" },
+  { name: "Tony K.", email: "tonyk@gmail.com", investments: "$25,000", status: "Active" },
+  { name: "Blessing N.", email: "bnwa@yahoo.com", investments: "$15,750", status: "Pending" },
+];
+
+function loadInvestorProfiles() {
+  const tbody = document.getElementById("investorTableBody");
+  tbody.innerHTML = "";
+
+  investors.forEach((investor, index) => {
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${investor.name}</td>
+      <td>${investor.email}</td>
+      <td>${investor.investments}</td>
+      <td>${investor.status}</td>
+      <td>
+        <button class="view" onclick="viewProfile(${index})">View</button>
+        <button class="edit" onclick="editInvestor(${index})">Edit</button>
+        <button class="block" onclick="blockInvestor(${index})">Block</button>
+        <button class="statement" onclick="downloadStatement(${index})">Statement</button>
+      </td>
+    `;
+
+    tbody.appendChild(row);
+  });
+}
+
+function viewProfile(index) {
+  alert(`Viewing profile for ${investors[index].name}`);
+}
+
+function editInvestor(index) {
+  alert(`Editing info for ${investors[index].name}`);
+}
+
+function blockInvestor(index) {
+  investors[index].status = "Blocked";
+  loadInvestorProfiles();
+}
+
+function downloadStatement(index) {
+  alert(`Downloading statement for ${investors[index].name}`);
+}
+
+document.addEventListener("DOMContentLoaded", loadInvestorProfiles);
