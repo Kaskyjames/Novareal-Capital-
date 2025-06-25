@@ -76,4 +76,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.getElementById('tools-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const title = document.getElementById('message-title').value;
+  const body = document.getElementById('message-body').value;
+  const action = document.getElementById('message-action').value;
+
+  let message = `📢 ${title}: ${body}`;
+
+  if (action === "dashboard") {
+    addLog("Admin posted dashboard alert");
+    alert("Dashboard message posted:\n\n" + message);
+  } else if (action === "email") {
+    addLog("Admin sent email blast");
+    alert("Simulated email sent:\n\n" + message);
+  } else if (action === "notification") {
+    addLog("Admin sent app notification");
+    alert("Simulated notification sent:\n\n" + message);
+  }
+
+  document.getElementById('admin-message-status').innerText = "✅ Update Sent!";
+  setTimeout(() => {
+    document.getElementById('admin-message-status').innerText = "";
+  }, 4000);
+});
   
