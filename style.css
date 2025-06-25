@@ -788,3 +788,75 @@ canvas {
   padding: 20px;
   border-radius: 12px;
 }
+.user-management {
+  background: #0d0d0d;
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.user-table-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+  font-size: 0.95rem;
+}
+
+.user-table th {
+  background: #111;
+  color: #ffd700;
+}
+
+.user-table tr:hover {
+  background-color: #1a1a1a;
+}
+
+.btn-approve,
+.btn-delete {
+  padding: 8px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-approve {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.badge.approved {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.badge.pending {
+  background-color: #ff9800;
+  color: #fff;
+}
