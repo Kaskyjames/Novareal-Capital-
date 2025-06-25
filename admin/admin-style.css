@@ -308,3 +308,47 @@ body {
   color: white;
 }
 
+.investor-tools {
+  background: #0e0e0e;
+  padding: 30px;
+  margin-top: 50px;
+  border-radius: 12px;
+}
+
+.investor-tools h3 {
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.investor-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.investor-table th,
+.investor-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #333;
+  color: #ccc;
+  text-align: left;
+}
+
+.investor-table th {
+  background-color: #1a1a1a;
+  color: #ffd700;
+}
+
+.investor-table button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin: 3px 3px 3px 0;
+}
+
+.investor-table .view { background: #17a2b8; color: #fff; }
+.investor-table .edit { background: #ffc107; color: #000; }
+.investor-table .block { background: #dc3545; color: #fff; }
+.investor-table .statement { background: #6f42c1; color: #fff; }
+
