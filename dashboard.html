@@ -408,36 +408,38 @@
   font-weight: bold;
 }
 
-    /* Ticker Container */
-.ticker-wrapper {
-  background: #000;
+    /* Horizontal Ticker */
+.ticker-horizontal {
+  background-color: #000;
   color: #fff;
   overflow: hidden;
   position: relative;
+  width: 100%;
   height: 40px;
   border-top: 2px solid #ffd700;
-}
-
-.ticker-content {
-  position: absolute;
-  animation: scroll-up 15s linear infinite;
   display: flex;
-  flex-direction: column;
-  padding-left: 20px;
+  align-items: center;
 }
 
-.ticker-content div {
-  font-size: 0.95rem;
-  line-height: 40px;
+.ticker-track {
+  display: inline-block;
   white-space: nowrap;
-  padding-right: 50px;
+  animation: scroll-left 30s linear infinite;
 }
 
-/* Vertical scroll keyframe */
-@keyframes scroll-up {
-  0% { transform: translateY(100%); }
-  100% { transform: translateY(-100%); }
+.ticker-track span {
+  display: inline-block;
+  margin-right: 50px;
+  font-size: 0.95rem;
+  color: #ffd700;
 }
+
+/* Horizontal scrolling animation */
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+    
   </style>
 </head>
 <body>
@@ -604,9 +606,9 @@ Thank you for growing with us.</p>
   </section>
 
   <!--- Notification --->
-  <div class="ticker-wrapper">
-  <div class="ticker-content" id="ticker-content">
-    <!-- Notifications will be injected here -->
+  <div class="ticker-horizontal">
+  <div class="ticker-track" id="ticker-track">
+    <!-- Notifications will scroll here -->
   </div>
   </div>
   
@@ -720,7 +722,7 @@ Thank you for growing with us.</p>
   resultDiv.innerHTML = `📈 Estimated ROI: $${roi.toFixed(2)}<br>Total Value: $${total.toFixed(2)}`;
     }
 
-    const tickerUpdates = [
+    const horizontalUpdates = [
   "💼 New plan launched: Estate Accelerator ($5K min)",
   "🚧 NovaGreen Towers construction update released",
   "📢 Investor briefing this weekend — RSVP open",
@@ -728,20 +730,20 @@ Thank you for growing with us.</p>
   "📈 Monthly ROI payouts processed"
 ];
 
-const tickerContent = document.getElementById("ticker-content");
+const tickerTrack = document.getElementById("ticker-track");
 
-if (tickerContent) {
-  tickerUpdates.forEach(update => {
-    const updateItem = document.createElement("div");
-    updateItem.textContent = update;
-    tickerContent.appendChild(updateItem);
+if (tickerTrack) {
+  horizontalUpdates.forEach(update => {
+    const span = document.createElement("span");
+    span.textContent = update;
+    tickerTrack.appendChild(span);
   });
 
-  // Duplicate updates to make the loop seamless
-  tickerUpdates.forEach(update => {
-    const updateItem = document.createElement("div");
-    updateItem.textContent = update;
-    tickerContent.appendChild(updateItem);
+  // Duplicate for seamless loop
+  horizontalUpdates.forEach(update => {
+    const span = document.createElement("span");
+    span.textContent = update;
+    tickerTrack.appendChild(span);
   });
 }
   </script>
