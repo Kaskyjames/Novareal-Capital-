@@ -287,47 +287,35 @@
 .download-statement button:hover {
   background: #ffea70;
 }
-    .updates-section {
-  margin: 60px auto;
-  padding: 20px;
-  max-width: 1000px;
-}
 
-.updates-section h2 {
+    .client-actions {
+  background: #111;
+  padding: 60px 20px;
   text-align: center;
-  color: #ffd700;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
 }
 
-.updates-feed {
-  display: flex;
-  flex-direction: column;
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
+  max-width: 800px;
+  margin: 30px auto 0;
 }
 
-.update-card {
-  background: #1a1a1a;
-  border-left: 5px solid #ffd700;
-  padding: 20px;
+.action-btn {
+  background: #ffd700;
+  color: #000;
+  font-weight: 600;
+  padding: 14px 20px;
+  border: none;
   border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1rem;
 }
 
-.update-card h4 {
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.update-card p {
-  color: #ccc;
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-}
-
-.update-date {
-  font-size: 0.8rem;
-  color: #888;
+.action-btn:hover {
+  background: #e6c200;
 }
     
     .roi-calculator-section {
@@ -502,28 +490,15 @@
   <button onclick="generatePDF()">📄 Download Portfolio Statement</button>
   </div>
 
-  <!-- Investment Alerts & Status -->
-<section class="alerts-section">
-  <h2 class="section-title">🔔 Investment Alerts</h2>
-  <p class="section-subtext">Latest updates related to your portfolio and projects.</p>
-
-  <div class="alert-feed">
-    <div class="alert-card success">
-      <strong>✅ ROI Payout Complete:</strong> $2,500 payout sent for Starter Plan.
-      <span class="alert-time">1 day ago</span>
-    </div>
-
-    <div class="alert-card info">
-      <strong>📢 New Project:</strong> NovaGreen Towers now available for private funding.
-      <span class="alert-time">3 days ago</span>
-    </div>
-
-    <div class="alert-card warning">
-      <strong>⚠️ Action Required:</strong> Verify documents for your Growth Investor plan.
-      <span class="alert-time">5 days ago</span>
-    </div>
+  <section class="client-actions">
+  <h2 class="section-heading">💼 Investor Actions</h2>
+  <div class="action-grid">
+    <button class="action-btn">➕ Deposit Funds</button>
+    <button class="action-btn">🔁 Request ROI</button>
+    <button class="action-btn">💵 Withdraw</button>
+    <button class="action-btn">📄 Download Report</button>
   </div>
-</section>
+  </section>
 
   <!--- ROI Calculator --->
   <section class="roi-calculator-section">
