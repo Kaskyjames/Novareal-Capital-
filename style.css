@@ -718,3 +718,56 @@
   font-size: 0.85rem;
   color: #888;
 }
+
+
+/* Admin Dashboard */
+.dashboard-header {
+  background: #111;
+  color: #ffd700;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #333;
+}
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.logo-area img {
+  width: 40px;
+  height: 40px;
+}
+.admin-analytics {
+  padding: 40px 20px;
+  background: #0d0d0d;
+  color: #fff;
+}
+.admin-analytics h2 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 30px;
+}
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.analytics-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #ffd700;
+}
+.analytics-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: #ffd700;
+}
+.analytics-card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+}
