@@ -906,3 +906,51 @@ canvas {
   font-size: 0.9rem;
   color: #00ff99;
 }
+
+.plan-editor-section {
+  background: #111;
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.plan-editor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.plan-editor-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 280px;
+}
+
+.plan-editor-card input {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #000;
+  color: #ffd700;
+}
+
+.plan-editor-card button {
+  padding: 10px;
+  background: #ffd700;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.plan-editor-card button:hover {
+  background: #e6c200;
+}
