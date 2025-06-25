@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-<script>
   // Portfolio Growth Chart (Line)
   new Chart(document.getElementById('growthChart'), {
     type: 'line',
@@ -137,4 +136,4 @@ document.addEventListener("DOMContentLoaded", () => {
       plugins: { legend: { labels: { color: '#fff' } } }
     }
   });
-</script>
+
