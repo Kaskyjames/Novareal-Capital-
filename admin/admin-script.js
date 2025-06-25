@@ -103,3 +103,64 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const walletData = [
+  {
+    name: "Daniel T.",
+    email: "daniel@example.com",
+    balance: 3500,
+    payoutRequest: 1200,
+    status: "Pending"
+  },
+  {
+    name: "Amaka B.",
+    email: "amaka@example.com",
+    balance: 5200,
+    payoutRequest: 0,
+    status: "—"
+  },
+  {
+    name: "Liam R.",
+    email: "liam@example.com",
+    balance: 11800,
+    payoutRequest: 5000,
+    status: "Pending"
+  }
+];
+
+function renderWalletTable() {
+  const tbody = document.getElementById("walletData");
+  tbody.innerHTML = "";
+
+  walletData.forEach((investor, index) => {
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${investor.name}</td>
+      <td>${investor.email}</td>
+      <td>$${investor.balance.toLocaleString()}</td>
+      <td>$${investor.payoutRequest.toLocaleString()}</td>
+      <td>${investor.status}</td>
+      <td>
+        ${investor.status === "Pending"
+          ? `<button class="approve" onclick="approvePayout(${index})">Approve</button>
+             <button class="decline" onclick="declinePayout(${index})">Decline</button>`
+          : "—"}
+      </td>
+    `;
+
+    tbody.appendChild(row);
+  });
+}
+
+function approvePayout(index) {
+  walletData[index].status = "Approved ✅";
+  renderWalletTable();
+}
+
+function declinePayout(index) {
+  walletData[index].status = "Declined ❌";
+  renderWalletTable();
+}
+
+document.addEventListener("DOMContentLoaded", renderWalletTable);
