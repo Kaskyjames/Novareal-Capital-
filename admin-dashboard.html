@@ -76,7 +76,7 @@
       <tbody>
         <tr>
           <td>Robert A.</td>
-          <td>robert@example.com</td>
+          <td>robertbeins@yahoo.com</td>
           <td>Growth Investor</td>
           <td><span class="badge approved">Approved</span></td>
           <td>
@@ -86,7 +86,7 @@
         </tr>
         <tr>
           <td>Rose O.</td>
-          <td>rose@example.com</td>
+          <td>roseorgab15@gmail.com</td>
           <td>Legacy Builder</td>
           <td><span class="badge pending">Pending</span></td>
           <td>
@@ -98,6 +98,17 @@
       </tbody>
     </table>
   </div>
+</section>
+
+  <!-- Admin Broadcast Message -->
+<section class="broadcast-section">
+  <h2 style="text-align:center; color:#ffd700;">📢 Broadcast Message</h2>
+  <form class="broadcast-form">
+    <input type="text" placeholder="Subject" required />
+    <textarea placeholder="Write your message to all investors..." rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+    <p class="broadcast-status" style="display:none;"></p>
+  </form>
 </section>
 
   <!-- Footer -->
@@ -167,6 +178,19 @@
       plugins: { legend: { labels: { color: '#fff' } } }
     }
   });
+
+    // Broadcast Message Feedback (mockup)
+document.querySelector(".broadcast-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const status = document.querySelector(".broadcast-status");
+  status.textContent = "✅ Message sent to all investors (simulation)";
+  status.style.display = "block";
+
+  setTimeout(() => {
+    status.style.display = "none";
+    this.reset();
+  }, 4000);
+});
   </script>
 </body>
 </html>
