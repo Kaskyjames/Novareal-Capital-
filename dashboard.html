@@ -53,6 +53,46 @@
       color: #fff;
     }
 
+    .stats-overview {
+  padding: 50px 20px;
+  background: #0b0b0b;
+  color: #fff;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.stat-card {
+  background: #111;
+  border-left: 5px solid #ffd700;
+  border-radius: 10px;
+  padding: 25px 20px;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+.stat-card p {
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
     .summary-cards {
       display: flex;
       flex-wrap: wrap;
@@ -425,31 +465,27 @@
   <div class="overlay"></div>
 
      <!-- Portfolio Breakdown -->
-<section class="portfolio-section">
-  <h2 class="section-title">📊 Portfolio Breakdown</h2>
-  
-  <div class="portfolio-grid">
-    <!-- Summary Cards -->
-    <div class="portfolio-card">
-      <h3>Total Invested</h3>
-      <p>$50,000</p>
+<section class="stats-overview">
+  <h2 class="section-heading">📊 Real-Time Investment Overview</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>$42,000</h3>
+      <p>Total Portfolio Value</p>
     </div>
-
-    <div class="portfolio-card">
-      <h3>Total Returns</h3>
-      <p>$7,500</p>
+    <div class="stat-card">
+      <h3>$7,200</h3>
+      <p>Total ROI Earned</p>
     </div>
-
-    <div class="portfolio-card">
-      <h3>Active Plans</h3>
-      <p>3 Plans</p>
+    <div class="stat-card">
+      <h3>3</h3>
+      <p>Active Investment Plans</p>
     </div>
-
-    <div class="portfolio-card">
-      <h3>Portfolio ROI</h3>
-      <p>15% Avg</p>
+    <div class="stat-card">
+      <h3>$1,500</h3>
+      <p>Withdrawable Balance</p>
     </div>
   </div>
+</section>
   
  <!-- Performance Analytics -->
 <section class="analytics-section">
