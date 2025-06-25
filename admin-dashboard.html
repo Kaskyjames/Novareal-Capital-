@@ -61,44 +61,54 @@
 </section>
 
   <!-- User Management Section -->
-<section class="user-management">
-  <h2 style="text-align:center; color:#ffd700;">Manage Investors</h2>
-  <div class="user-table-container">
-    <table class="user-table">
-      <thead>
-        <tr>
-          <th>Investor</th>
-          <th>Email</th>
-          <th>Plan</th>
-          <th>Status</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Robert A.</td>
-          <td>robertbeins@yahoo.com</td>
-          <td>Growth Investor</td>
-          <td><span class="badge approved">Approved</span></td>
-          <td>
-            <button class="btn-approve">Approve</button>
-            <button class="btn-delete">Delete</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Rose O.</td>
-          <td>roseorgab15@gmail.com</td>
-          <td>Legacy Builder</td>
-          <td><span class="badge pending">Pending</span></td>
-          <td>
-            <button class="btn-approve">Approve</button>
-            <button class="btn-delete">Delete</button>
-          </td>
-        </tr>
-        <!-- Add more rows dynamically if needed -->
-      </tbody>
-    </table>
+<section class="admin-section">
+  <h2>🧾 Manage Investors</h2>
+
+  <div class="table-controls">
+    <button id="addInvestorBtn">➕ Add Investor</button>
+    <input type="text" id="searchInput" placeholder="Search by name or email" />
   </div>
+
+  <table id="investorTable">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Investor Name</th>
+        <th>Email</th>
+        <th>Plan</th>
+        <th>Amount ($)</th>
+        <th>ROI (%)</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Sample data -->
+      <tr>
+        <td>1</td>
+        <td>Robert A.</td>
+        <td>robert@example.com</td>
+        <td>Growth</td>
+        <td>10,000</td>
+        <td>18</td>
+        <td>
+          <button class="edit-btn">✏️</button>
+          <button class="delete-btn">🗑️</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Rose O.</td>
+        <td>rose@example.com</td>
+        <td>Legacy</td>
+        <td>25,000</td>
+        <td>20</td>
+        <td>
+          <button class="edit-btn">✏️</button>
+          <button class="delete-btn">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
   <!-- Admin Broadcast Message -->
