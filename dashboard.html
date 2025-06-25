@@ -451,6 +451,60 @@
 .transaction-table tr:hover {
   background-color: #1e1e1e;
 }
+    .referral-section {
+  background: #0a0a0a;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.referral-intro {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.referral-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.referral-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.referral-box input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  border: 1px solid #333;
+  font-size: 0.95rem;
+}
+
+.referral-box button {
+  background: #ffd700;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.referral-stats {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  color: #ccc;
+  font-size: 1rem;
+}
     
     /* Floating Horizontal Ticker */
 .ticker-horizontal {
@@ -636,6 +690,31 @@ Thank you for growing with us.</p>
   </div>
   </section>
 
+     <!--- Referral link --->
+  <section class="referral-section">
+  <h2 class="section-heading">🤝 Refer & Earn</h2>
+  <p class="referral-intro">Invite friends and earn bonus rewards when they invest through your link.</p>
+
+  <div class="referral-card">
+    <label for="referral-link">Your Referral Link</label>
+    <div class="referral-box">
+      <input type="text" id="referral-link" readonly value="https://novarealcapital.com/signup?ref=JamesKasky" />
+      <button onclick="copyReferral()">Copy</button>
+    </div>
+
+    <div class="referral-stats">
+      <div>
+        <strong>Referrals:</strong>
+        <span>7</span>
+      </div>
+      <div>
+        <strong>Bonus Earned:</strong>
+        <span>$350</span>
+      </div>
+    </div>
+  </div>
+  </section>
+
   <!--- Notification --->
   <div class="ticker-horizontal">
   <div class="ticker-track" id="ticker-track">
@@ -781,6 +860,14 @@ if (tickerTrack) {
     tickerTrack.appendChild(span);
   });
 }
+
+    function copyReferral() {
+  const input = document.getElementById("referral-link");
+  input.select();
+  input.setSelectionRange(0, 99999); // for mobile
+  document.execCommand("copy");
+  alert("Referral link copied!");
+    }
   </script>
 </body>
 </html>
