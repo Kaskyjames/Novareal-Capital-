@@ -65,5 +65,67 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  // Portfolio Growth Chart (Line)
+  new Chart(document.getElementById('growthChart'), {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label: 'Portfolio Growth (%)',
+        data: [4.2, 5.6, 6.8, 7.4, 9.1, 12.6],
+        borderColor: '#ffd700',
+        backgroundColor: 'rgba(255, 215, 0, 0.2)',
+        fill: true,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { color: '#fff' } } },
+      scales: {
+        x: { ticks: { color: '#ccc' } },
+        y: { ticks: { color: '#ccc' } }
+      }
+    }
+  });
+
+  // Monthly Signups (Bar)
+  new Chart(document.getElementById('signupChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label: 'New Investors',
+        data: [38, 45, 52, 66, 74, 88],
+        backgroundColor: '#ffd700'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { color: '#fff' } } },
+      scales: {
+        x: { ticks: { color: '#ccc' } },
+        y: { ticks: { color: '#ccc' } }
+      }
+    }
+  });
+
+  // Investment Plan Distribution (Doughnut)
+  new Chart(document.getElementById('planChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Starter', 'Growth', 'Legacy', 'Global', 'Premier'],
+      datasets: [{
+        data: [12, 28, 24, 18, 18],
+        backgroundColor: ['#ffd700', '#ff9800', '#4caf50', '#2196f3', '#9c27b0']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { color: '#fff' } } }
+    }
+  });
+  </script>
 </body>
 </html>
