@@ -107,7 +107,31 @@
   <canvas id="investorChart" height="120" style="margin-top: 40px;"></canvas>
       </div>
     </section>
+    
   </main>
+  
+  <!--- Wallet Manager--->
+  <section class="wallet-section">
+  <h3>💳 Wallet Manager & Payout Requests</h3>
+
+  <div class="wallet-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Investor Name</th>
+          <th>Email</th>
+          <th>Balance ($)</th>
+          <th>Requested Payout</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="walletData">
+        <!-- Dynamic Rows will be injected here -->
+      </tbody>
+    </table>
+  </div>
+  </section>
 
   <script src="/admin/admin-script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
