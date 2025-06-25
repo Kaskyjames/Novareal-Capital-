@@ -213,3 +213,31 @@ function downloadStatement(index) {
 }
 
 document.addEventListener("DOMContentLoaded", loadInvestorProfiles);
+
+const notifications = [
+  { message: "New investor Joy E. just signed up!", read: false },
+  { message: "Withdrawal request from Tony K. ($2,000)", read: false },
+  { message: "Message received from Blessing N.", read: true },
+];
+
+function loadNotifications() {
+  const list = document.getElementById("notificationList");
+  list.innerHTML = "";
+
+  notifications.forEach((note, index) => {
+    const li = document.createElement("li");
+    li.className = note.read ? "" : "unread";
+    li.innerHTML = `
+      ${note.message}
+      <button onclick="markAsRead(${index})">✓</button>
+    `;
+    list.appendChild(li);
+  });
+}
+
+function markAsRead(index) {
+  notifications[index].read = true;
+  loadNotifications();
+}
+
+document.addEventListener("DOMContentLoaded", loadNotifications);
