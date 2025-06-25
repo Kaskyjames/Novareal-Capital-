@@ -1,3 +1,76 @@
+.admin-section {
+  margin-top: 60px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.admin-section h2 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#addInvestorBtn {
+  padding: 10px 18px;
+  background: #ffd700;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#investorTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#investorTable th, #investorTable td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+#investorTable th {
+  background: #111;
+  color: #fff;
+}
+
+.edit-btn, .delete-btn {
+  padding: 6px 10px;
+  margin-right: 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #3498db;
+  color: #fff;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: #fff;
+}
+
 .portfolio-download {
   text-align: center;
   margin: 30px 0;
