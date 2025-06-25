@@ -163,6 +163,38 @@
   </div>
 </section>
 
+  <!-- System Settings -->
+<section class="system-settings-section">
+  <h2 style="text-align:center; color:#ffd700;">⚙️ System Settings</h2>
+  <form class="settings-form" id="settings-form">
+    <label>Company Name
+      <input type="text" id="company-name" value="Novareal Capital" />
+    </label>
+
+    <label>Support Email
+      <input type="email" id="support-email" value="hello@novarealcapital.com" />
+    </label>
+
+    <label>Logo Image URL
+      <input type="url" id="logo-url" value="images/logo.png" />
+    </label>
+
+    <label>Default ROI (%) 
+      <input type="number" id="default-roi" value="15" min="0" />
+    </label>
+
+    <label>
+      Notification Sound
+      <select id="notification-sound">
+        <option value="on">On</option>
+        <option value="off">Off</option>
+      </select>
+    </label>
+
+    <button type="submit">Save Settings</button>
+  </form>
+</section>
+
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 Novareal Capital – Admin Panel</p>
@@ -259,6 +291,22 @@ document.querySelector(".broadcast-form").addEventListener("submit", function (e
   entry.textContent = `[${timestamp}] ${message}`;
   log.prepend(entry);
     }
+
+    document.getElementById('settings-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById('company-name').value;
+  const email = document.getElementById('support-email').value;
+  const logo = document.getElementById('logo-url').value;
+  const roi = document.getElementById('default-roi').value;
+  const sound = document.getElementById('notification-sound').value;
+
+  // Simulate saving settings
+  console.log("Updated Settings:", { name, email, logo, roi, sound });
+
+  addLog("System settings updated");
+  alert("Settings saved successfully!");
+});
   </script>
 </body>
 </html>
