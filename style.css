@@ -860,3 +860,49 @@ canvas {
   background-color: #ff9800;
   color: #fff;
 }
+
+.broadcast-section {
+  background: #0a0a0a;
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.broadcast-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.broadcast-form input,
+.broadcast-form textarea {
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.broadcast-form button {
+  padding: 14px;
+  background: #ffd700;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.broadcast-form button:hover {
+  background: #e6c200;
+}
+
+.broadcast-status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #00ff99;
+}
