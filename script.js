@@ -102,3 +102,34 @@ document.getElementById('tools-form').addEventListener('submit', function (e) {
   }, 4000);
 });
   
+function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(20);
+  doc.text("Novareal Capital - Portfolio Summary", 15, 20);
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(12);
+
+  const investorName = "James Kasky";
+  const investmentPlans = [
+    { title: "$10,000 - Growth Investor", roi: "18%", duration: "6 months", status: "Active" },
+    { title: "$25,000 - Legacy Builder", roi: "20%", duration: "12 months", status: "Completed" }
+  ];
+
+  doc.text(`Investor: ${investorName}`, 15, 35);
+  doc.text(`Date: ${new Date().toLocaleDateString()}`, 15, 43);
+
+  doc.text("Investments:", 15, 55);
+  let y = 65;
+
+  investmentPlans.forEach(plan => {
+    doc.text(`• ${plan.title} – ROI: ${plan.roi} – ${plan.duration} – Status: ${plan.status}`, 20, y);
+    y += 10;
+  });
+
+  doc.text("Thank you for trusting Novareal Capital.", 15, y + 15);
+  doc.save("Novareal_Portfolio_Summary.pdf");
+}
