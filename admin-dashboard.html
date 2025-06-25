@@ -135,8 +135,31 @@
       <button onclick="savePlan(this)">Save</button>
     </div>
 
+    <div class="plan-editor-card">
+      <input type="text" value="$100,000 - Global Investor" />
+      <input type="text" value="ROI: 18–25% annually" />
+      <button onclick="savePlan(this)">Save</button>
+    </div>
+
+    <div class="plan-editor-card">
+      <input type="text" value="$500,000 - Premier Estate Circle" />
+      <input type="text" value="ROI: 25–30% annually" />
+      <button onclick="savePlan(this)">Save</button>
+    </div>
+
     <!-- Add more plan cards as needed -->
 
+  </div>
+</section>
+
+  <!-- Admin Activity Logs -->
+<section class="activity-log-section">
+  <h2 style="text-align:center; color:#ffd700;">📋 Admin Activity Logs</h2>
+  <div class="activity-log-container" id="activity-log">
+    <div class="activity-entry">[12:45 PM] Broadcast sent to all investors</div>
+    <div class="activity-entry">[12:42 PM] Edited plan: $25,000 - Legacy Builder</div>
+    <div class="activity-entry">[12:38 PM] Added new investment plan</div>
+    <div class="activity-entry">[12:20 PM] Logged into admin dashboard</div>
   </div>
 </section>
 
@@ -226,6 +249,15 @@ document.querySelector(".broadcast-form").addEventListener("submit", function (e
   const planTitle = inputs[0].value;
   const planROI = inputs[1].value;
   alert(`✅ Saved Plan:\n${planTitle}\n${planROI}`);
+    }
+
+    function addLog(message) {
+  const log = document.getElementById("activity-log");
+  const timestamp = new Date().toLocaleTimeString();
+  const entry = document.createElement("div");
+  entry.className = "activity-entry";
+  entry.textContent = `[${timestamp}] ${message}`;
+  log.prepend(entry);
     }
   </script>
 </body>
