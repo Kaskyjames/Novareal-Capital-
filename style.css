@@ -771,3 +771,20 @@
   font-weight: bold;
   color: #fff;
 }
+.chart-section {
+  background: #0a0a0a;
+  padding: 60px 20px;
+  color: #fff;
+}
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+canvas {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+}
