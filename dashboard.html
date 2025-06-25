@@ -289,69 +289,7 @@
   font-size: 0.8rem;
   color: #888;
 }
-    .transaction-section {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
-}
-
-.transaction-section h2 {
-  text-align: center;
-  color: #ffd700;
-  margin-bottom: 30px;
-}
-
-.transaction-table-wrapper {
-  overflow-x: auto;
-  background: #1a1a1a;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.transaction-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 700px;
-}
-
-.transaction-table thead {
-  background-color: #111;
-}
-
-.transaction-table th,
-.transaction-table td {
-  padding: 14px 18px;
-  text-align: left;
-  color: #ddd;
-  border-bottom: 1px solid #333;
-}
-
-.transaction-table th {
-  color: #ffd700;
-}
-
-.badge {
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.badge.active {
-  background-color: #28a745;
-  color: #fff;
-}
-
-.badge.pending {
-  background-color: #ffc107;
-  color: #000;
-}
-
-.badge.completed {
-  background-color: #007bff;
-  color: #fff;
-}
+    
     .roi-calculator-section {
   background: #0e0e0e;
   padding: 60px 20px;
@@ -408,6 +346,42 @@
   font-weight: bold;
 }
 
+    .table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #0a0a0a;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.2);
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.transaction-table th {
+  background-color: #111;
+  color: #ffd700;
+  font-weight: 500;
+}
+
+.transaction-table tr:nth-child(even) {
+  background-color: #121212;
+}
+
+.transaction-table tr:hover {
+  background-color: #1e1e1e;
+}
+    
     /* Floating Horizontal Ticker */
 .ticker-horizontal {
   position: fixed;
@@ -569,41 +543,40 @@ Thank you for growing with us.</p>
   </section>
 
   <!--- Transaction History --->
-  <section class="transaction-section">
-  <h2>📄 Transaction History</h2>
-
-  <div class="transaction-table-wrapper">
+  <section class="dashboard-section" id="transaction-history">
+  <h2 class="section-heading">📑 Transaction History</h2>
+  <div class="table-container">
     <table class="transaction-table">
       <thead>
         <tr>
           <th>Date</th>
+          <th>Type</th>
           <th>Amount</th>
-          <th>Plan</th>
           <th>Status</th>
-          <th>ROI</th>
+          <th>Notes</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>March 1, 2025</td>
+          <td>2025-06-20</td>
+          <td>Deposit</td>
           <td>$10,000</td>
-          <td>Growth Investor</td>
-          <td><span class="badge active">Active</span></td>
-          <td>18% after 6 months</td>
+          <td>✅ Completed</td>
+          <td>Initial Investment</td>
         </tr>
         <tr>
-          <td>Jan 10, 2025</td>
-          <td>$25,000</td>
-          <td>Legacy Builder</td>
-          <td><span class="badge completed">Completed</span></td>
-          <td>$30,000 (Paid)</td>
+          <td>2025-07-01</td>
+          <td>ROI</td>
+          <td>$1,800</td>
+          <td>✅ Paid</td>
+          <td>Monthly ROI</td>
         </tr>
         <tr>
-          <td>Feb 15, 2025</td>
-          <td>$2,500</td>
-          <td>Starter Investor</td>
-          <td><span class="badge pending">Pending</span></td>
-          <td>-</td>
+          <td>2025-07-15</td>
+          <td>Withdrawal</td>
+          <td>$500</td>
+          <td>⏳ Pending</td>
+          <td>User Requested</td>
         </tr>
       </tbody>
     </table>
