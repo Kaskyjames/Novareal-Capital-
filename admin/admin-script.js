@@ -56,3 +56,50 @@ new Chart(ctx2, {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const revenueChart = new Chart(document.getElementById("revenueChart"), {
+    type: "line",
+    data: {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      datasets: [{
+        label: "Monthly Revenue ($)",
+        data: [10500, 12500, 13800, 12000, 14800, 16000],
+        fill: true,
+        backgroundColor: "rgba(255,215,0,0.1)",
+        borderColor: "#ffd700",
+        tension: 0.4
+      }]
+    },
+    options: {
+      plugins: {
+        legend: { labels: { color: "#fff" } }
+      },
+      scales: {
+        x: { ticks: { color: "#ccc" }, grid: { color: "#222" } },
+        y: { ticks: { color: "#ccc" }, grid: { color: "#222" } }
+      }
+    }
+  });
+
+  const investorChart = new Chart(document.getElementById("investorChart"), {
+    type: "bar",
+    data: {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+      datasets: [{
+        label: "New Investors",
+        data: [12, 20, 18, 23, 30, 28],
+        backgroundColor: "#ffd700"
+      }]
+    },
+    options: {
+      plugins: {
+        legend: { labels: { color: "#fff" } }
+      },
+      scales: {
+        x: { ticks: { color: "#ccc" }, grid: { color: "#222" } },
+        y: { ticks: { color: "#ccc" }, grid: { color: "#222" } }
+      }
+    }
+  });
+});
