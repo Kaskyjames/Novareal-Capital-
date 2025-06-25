@@ -203,3 +203,43 @@ body {
   color: #000;
   transform: translateY(-2px);
 }
+
+.revenue-overview {
+  background: #121212;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.revenue-overview h3 {
+  color: #ffd700;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+.revenue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.revenue-box {
+  background: #1d1d1d;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.revenue-box h4 {
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-bottom: 8px;
+}
+
+.revenue-box p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
