@@ -166,3 +166,40 @@ body {
   font-size: 0.8rem;
   color: #888;
 }
+
+.quick-actions {
+  background: #1a1a1a;
+  margin-top: 50px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+.quick-actions h3 {
+  color: #ffd700;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.action-btn {
+  background: #222;
+  color: #fff;
+  padding: 14px 20px;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.action-btn:hover {
+  background: #ffd700;
+  color: #000;
+  transform: translateY(-2px);
+}
