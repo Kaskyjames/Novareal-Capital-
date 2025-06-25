@@ -407,51 +407,36 @@
   color: #00ff99;
   font-weight: bold;
 }
-    .notifications-section {
-  padding: 60px 20px;
-  background: #101010;
+
+    /* Ticker Container */
+.ticker-wrapper {
+  background: #000;
   color: #fff;
-}
-
-.notifications-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #ffd700;
-  margin-bottom: 30px;
-}
-
-.notification-list {
-  max-width: 800px;
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
-}
-
-.notification-list li {
-  background: #1a1a1a;
-  padding: 15px 20px;
-  border-left: 4px solid #ffd700;
-  margin-bottom: 15px;
-  border-radius: 6px;
-  font-size: 1rem;
+  overflow: hidden;
   position: relative;
-  animation: fadeInUp 0.5s ease;
+  height: 40px;
+  border-top: 2px solid #ffd700;
 }
 
-.notification-list li::before {
-  content: "📢";
-  margin-right: 10px;
+.ticker-content {
+  position: absolute;
+  animation: scroll-up 15s linear infinite;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.ticker-content div {
+  font-size: 0.95rem;
+  line-height: 40px;
+  white-space: nowrap;
+  padding-right: 50px;
+}
+
+/* Vertical scroll keyframe */
+@keyframes scroll-up {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
 }
   </style>
 </head>
@@ -619,12 +604,11 @@ Thank you for growing with us.</p>
   </section>
 
   <!--- Notification --->
-  <section class="notifications-section">
-  <h2>🔔 Latest Updates</h2>
-  <ul class="notification-list" id="notification-list">
-    <!-- Notifications will be dynamically inserted here -->
-  </ul>
-  </section>
+  <div class="ticker-wrapper">
+  <div class="ticker-content" id="ticker-content">
+    <!-- Notifications will be injected here -->
+  </div>
+  </div>
   
   
   <!-- Chart.js CDN -->
@@ -736,21 +720,28 @@ Thank you for growing with us.</p>
   resultDiv.innerHTML = `📈 Estimated ROI: $${roi.toFixed(2)}<br>Total Value: $${total.toFixed(2)}`;
     }
 
-    const notifications = [
-  "🎉 New Investment Plan: $5K Estate Accelerator just launched!",
-  "📍 NovaGreen Towers now 60% completed – New visuals added.",
-  "💼 Monthly payout schedule updated for Growth Investors.",
-  "📢 Investor Webinar this Saturday – Check your email for invite.",
-  "✅ Oceanview Residences marked as 'Sold Out'. Congrats investors!",
+    const tickerUpdates = [
+  "💼 New plan launched: Estate Accelerator ($5K min)",
+  "🚧 NovaGreen Towers construction update released",
+  "📢 Investor briefing this weekend — RSVP open",
+  "✅ Oceanview Residences sold out!",
+  "📈 Monthly ROI payouts processed"
 ];
 
-const notificationList = document.getElementById("notification-list");
+const tickerContent = document.getElementById("ticker-content");
 
-if (notificationList) {
-  notifications.forEach(note => {
-    const li = document.createElement("li");
-    li.textContent = note;
-    notificationList.appendChild(li);
+if (tickerContent) {
+  tickerUpdates.forEach(update => {
+    const updateItem = document.createElement("div");
+    updateItem.textContent = update;
+    tickerContent.appendChild(updateItem);
+  });
+
+  // Duplicate updates to make the loop seamless
+  tickerUpdates.forEach(update => {
+    const updateItem = document.createElement("div");
+    updateItem.textContent = update;
+    tickerContent.appendChild(updateItem);
   });
 }
   </script>
