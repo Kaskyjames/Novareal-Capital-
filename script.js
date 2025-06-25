@@ -133,3 +133,86 @@ function generatePDF() {
   doc.text("Thank you for trusting Novareal Capital.", 15, y + 15);
   doc.save("Novareal_Portfolio_Summary.pdf");
 }
+
+const investorTable = document.querySelector("#investorTable tbody");
+const addInvestorBtn = document.getElementById("addInvestorBtn");
+const searchInput = document.getElementById("searchInput");
+
+// Dummy Data (could later be fetched from a server)
+let investors = [
+  { name: "Robert A.", email: "robert@example.com", plan: "Growth", amount: 10000, roi: 18 },
+  { name: "Rose O.", email: "rose@example.com", plan: "Legacy", amount: 25000, roi: 20 }
+];
+
+// Render Table
+function renderTable(data) {
+  investorTable.innerHTML = "";
+  data.forEach((inv, index) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${inv.name}</td>
+      <td>${inv.email}</td>
+      <td>${inv.plan}</td>
+      <td>${inv.amount.toLocaleString()}</td>
+      <td>${inv.roi}%</td>
+      <td>
+        <button class="edit-btn" onclick="editInvestor(${index})">✏️</button>
+        <button class="delete-btn" onclick="deleteInvestor(${index})">🗑️</button>
+      </td>
+    `;
+    investorTable.appendChild(row);
+  });
+}
+
+renderTable(investors);
+
+// Add Investor (basic prompt modal for now)
+addInvestorBtn.addEventListener("click", () => {
+  const name = prompt("Investor Name:");
+  const email = prompt("Email:");
+  const plan = prompt("Plan (Starter, Growth, Legacy, etc):");
+  const amount = parseFloat(prompt("Amount Invested:"));
+  const roi = parseFloat(prompt("ROI %:"));
+
+  if (name && email && plan && !isNaN(amount) && !isNaN(roi)) {
+    investors.push({ name, email, plan, amount, roi });
+    renderTable(investors);
+  } else {
+    alert("Please enter valid investor details.");
+  }
+});
+
+// Delete Investor
+function deleteInvestor(index) {
+  if (confirm("Are you sure you want to delete this investor?")) {
+    investors.splice(index, 1);
+    renderTable(investors);
+  }
+}
+
+// Edit Investor
+function editInvestor(index) {
+  const investor = investors[index];
+  const name = prompt("Edit Name:", investor.name);
+  const email = prompt("Edit Email:", investor.email);
+  const plan = prompt("Edit Plan:", investor.plan);
+  const amount = parseFloat(prompt("Edit Amount:", investor.amount));
+  const roi = parseFloat(prompt("Edit ROI:", investor.roi));
+
+  if (name && email && plan && !isNaN(amount) && !isNaN(roi)) {
+    investors[index] = { name, email, plan, amount, roi };
+    renderTable(investors);
+  } else {
+    alert("Invalid input.");
+  }
+}
+
+// Search
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  const filtered = investors.filter(i =>
+    i.name.toLowerCase().includes(query) || i.email.toLowerCase().includes(query)
+  );
+  renderTable(filtered);
+});
