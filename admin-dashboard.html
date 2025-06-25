@@ -195,6 +195,34 @@
   </form>
 </section>
 
+  <!-- Admin Quick Tools -->
+<section class="admin-tools-section">
+  <h2 style="text-align:center; color:#ffd700;">🚀 Admin Quick Tools</h2>
+  
+  <form class="tools-form" id="tools-form">
+    <label>Message Title
+      <input type="text" id="message-title" required placeholder="E.g. ROI Payout Notice">
+    </label>
+
+    <label>Message Body
+      <textarea id="message-body" rows="5" placeholder="Write your announcement..."></textarea>
+    </label>
+
+    <label>
+      Action
+      <select id="message-action">
+        <option value="dashboard">Show on Dashboard</option>
+        <option value="email">Send Email (Simulated)</option>
+        <option value="notification">Send Notification (Simulated)</option>
+      </select>
+    </label>
+
+    <button type="submit">Send Update</button>
+  </form>
+
+  <div id="admin-message-status" style="margin-top:20px; color:#0f0;"></div>
+</section>
+
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 Novareal Capital – Admin Panel</p>
